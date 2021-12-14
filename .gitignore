@@ -1,0 +1,6 @@
+# virtual environment files
+/include
+/Lib
+
+# python scripts
+/Scripts
