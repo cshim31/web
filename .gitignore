@@ -2,5 +2,5 @@
 /include
 /Lib
 
-# python scripts
-/Scripts
+# virtual environments
+/virtualenvs
