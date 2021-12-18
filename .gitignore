@@ -4,3 +4,6 @@
 
 # virtual environments
 /virtualenvs
+
+# dependencies
+/node_modules
