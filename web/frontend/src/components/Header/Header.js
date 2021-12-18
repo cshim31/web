@@ -1,18 +1,22 @@
 import React from 'react';
 import {
     Toolbar,
-    IconButton
+    IconButton,
 } from '@mui/material';
 import { 
     BrowserRouter as Router,
     Link
 } from 'react-router-dom';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { 
+    Menu as MenuIcon,
+} from '@mui/icons-material';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import constants from '../constants';
 import AppLogo from '../App/AppLogo';
+import Settings from '../Settings';
+import ReportTab from '../ReportTab';
 
 const HeaderBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
@@ -53,23 +57,37 @@ const TabContainer = styled.div`
 const LogoGroup = () => {
     return (
         <VerticalAlignDiv>
-            <IconButton 
-
-            >
-                <MenuIcon />
-            </IconButton>
+            <IconWrapper>
+                <IconButton 
+                    aria-label='menu'
+                    aria-controls='menu-appbar'
+                    onClick={onMenuClick}
+                    color='inherit'
+                >
+                    <MenuIcon />
+                </IconButton>
+            </IconWrapper>
             <LogoWrapper>
-                <AppLogo string='Shim' />
+                <AppLogo string='CSHIM' />
             </LogoWrapper>
         </VerticalAlignDiv>
     );
 };
 
+const IconWrapper = styled.div`
+    margin-right: 16px;
+`;
+
 const LogoWrapper = styled.div`
     @media screen and (max-width: 800px) {
         display: none;
     }
+    margin-right: 16px;
 `;
+
+const onMenuClick = () => {
+
+};
 
 const LinkGroup = ({ LinkbarPages }) => {
     return (
@@ -88,55 +106,49 @@ const LinkGroup = ({ LinkbarPages }) => {
 };
 
 const LinkWrapper = styled.div`
-@media screen and (max-width: 800px) {
-    display: none;
-}
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+    margin-right: 16dp;
 `;
 
 LinkGroup.propTypes = {
     LinkbarPages: PropTypes.arrayOf(PropTypes.object),
 };
 
-
-const LinkbarPages = [
-    {
-        key: 'page_intro',
-        to:{
-            pathname:'/intro'
-        },
-        label: 'Introduction',
-    },
-
-    {
-        key: 'page_exp',
-        to:{
-            pathname:'/exp'
-        },
-        label: 'Experience',
-    },
-
-    {
-        key: 'page_git',
-        to:{
-            pathname:'/git'
-        },
-        label: 'GitHub',
-    },
-
-];
-
 const MenuWrapper = styled.div`
 
 `;
 
 
-const MenuGroup = () => {
-    return (
-        <div></div>
-    );
-};
-
 const Header = () => {
+
+    const LinkbarPages = [
+        {
+            key: 'page_intro',
+            to:{
+                pathname:'/intro'
+            },
+            label: 'Introduction',
+        },
+    
+        {
+            key: 'page_exp',
+            to:{
+                pathname:'/exp'
+            },
+            label: 'Experience',
+        },
+    
+        {
+            key: 'page_git',
+            to:{
+                pathname:'/git'
+            },
+            label: 'GitHub',
+        },
+    
+    ];
 
     return(
         <HeaderBar>
@@ -145,8 +157,10 @@ const Header = () => {
                     <LogoGroup />
                     <LinkGroup LinkbarPages={LinkbarPages}/>
                 </VerticalAlignDiv>
-                <VerticalAlignDiv>
-                    <MenuGroup />
+                <VerticalAlignDiv style={{ marginLeft: 'auto', marginRight:'3%'}}>
+                    <Settings>
+                        <ReportTab />
+                    </Settings>
                 </VerticalAlignDiv>
                 <VerticalAlignDiv>
                     
