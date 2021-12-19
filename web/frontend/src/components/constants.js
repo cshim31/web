@@ -1,4 +1,5 @@
 export default {
+    defaultPrimaryColor: 'rgba(0, 0, 0, 0.4)',
     defaultPrimaryColorSolid: 'rgba(0, 0, 0, 0.37)',
     primaryTextColor: 'rgba(255, 255, 255, 0.87)',
     fontWeightMedium: '500',

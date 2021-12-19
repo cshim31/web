@@ -1,17 +1,41 @@
-import { Container } from '@mui/material';
+import styled from '@emotion/styled';
 
-import logo from './logo.svg';
-import './App.css';
 import Header from '../Header';
+import Banner from '../Banner';
+import Footer from '../Footer';
+
+const HorizontalAlignDiv = styled.div`
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+`;
+
+const SubDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    align-items: center;
+    justify-content: center;
+`;
+
+const MainDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    align-items: center;
+    justify-content: center;
+`;
 
 function App() {
   return (
-    <Container>
-        <Header>
-          
-        </Header>
-
-    </Container>
+    <HorizontalAlignDiv>
+        <Header />
+        <MainDiv>
+          <Banner />
+        </MainDiv>
+        <Footer />
+    </HorizontalAlignDiv>
     
   );
 }

@@ -18,7 +18,7 @@ import AppLogo from '../App/AppLogo';
 import Settings from '../Settings';
 import ReportTab from '../ReportTab';
 
-const HeaderBar = styled(Toolbar)`
+const StyledToolBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
     background-color: ${constants.defaultPrimaryColorSolid} !important;
     height: 56px;
@@ -27,7 +27,7 @@ const HeaderBar = styled(Toolbar)`
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: ${constants.priorStackOrder}
+    z-index: ${constants.priorStackOrder};
     & a {
     color: ${constants.primaryTextColor};
     &:hover {
@@ -151,7 +151,7 @@ const Header = () => {
     ];
 
     return(
-        <HeaderBar>
+        <StyledToolBar>
             <Router>
                 <VerticalAlignDiv>
                     <LogoGroup />
@@ -169,7 +169,7 @@ const Header = () => {
                     
                 </VerticalAlignDiv>
             </Router>
-        </HeaderBar>
+        </StyledToolBar>
     );
 };
 
