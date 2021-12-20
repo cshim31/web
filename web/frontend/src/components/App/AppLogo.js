@@ -1,7 +1,8 @@
 
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import { connect } from 'react-redux';
 
 import constants from '../constants';
 
@@ -9,6 +10,7 @@ const StyledLink = styled(Link)`
   font-weight: ${constants.fontWeightMedium};
   color: ${constants.primaryTextColor};
   text-transform: uppercase;
+  text-decoration: none;
   &:hover {
     color: ${constants.primaryTextColor};
     opacity: 0.6;
@@ -28,4 +30,8 @@ AppLogo.propTypes = {
     onClick: PropTypes.func,
 };
 
-export default AppLogo;
+const mapStateToProps = (state) => ({
+    string: state.metadata.payload.app_logo,
+});
+
+export default connect(mapStateToProps)(AppLogo);

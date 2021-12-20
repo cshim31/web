@@ -23,7 +23,7 @@ const StyledToolBar = styled(Toolbar)`
     background-color: ${constants.defaultPrimaryColorSolid} !important;
     height: 56px;
     left: 0;
-    padding: 8px 16px !important;
+    padding: 0px 16px !important;
     position: fixed;
     top: 0;
     width: 100%;
@@ -68,7 +68,7 @@ const LogoGroup = () => {
                 </IconButton>
             </IconWrapper>
             <LogoWrapper>
-                <AppLogo string='CSHIM' />
+                <AppLogo />
             </LogoWrapper>
         </VerticalAlignDiv>
     );
@@ -96,7 +96,7 @@ const LinkGroup = ({ LinkbarPages }) => {
                 LinkbarPages.map((page) => (
                     <TabContainer key={page.key}>
                         <LinkWrapper>
-                            <Link to={page.to}>{page.label}</Link> 
+                            <StyledLink to={page.to}>{page.label}</StyledLink> 
                         </LinkWrapper>
                     </TabContainer>
                 ))
@@ -110,6 +110,10 @@ const LinkWrapper = styled.div`
         display: none;
     }
     margin-right: 16dp;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
 `;
 
 LinkGroup.propTypes = {

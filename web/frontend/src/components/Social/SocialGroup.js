@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
-import { IoLogoGithub } from '@react-icons/all-files/io/IoLogoGithub';
-import { IoLogoLinkedin } from '@react-icons/all-files/io/IoLogoLinkedin';
+import { 
+    AiFillGithub,
+    AiFillLinkedin
+} from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
 const VerticalAlignDiv = styled.div`
@@ -13,8 +15,12 @@ const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 12px;
+  margin: 0 0 0 12px;
   position: relative;
+
+  &:hover {
+      opacity: 0.6;
+  }
 `;
 
 const ImageWrapper = ({ SocialLink }) => {
@@ -41,14 +47,14 @@ const SocialGroup = () => {
             key: 'GitHub',
             to: 'https://github.com/cshim31/web',
             label: 'link to GitHub',
-            img: <IoLogoGithub />
+            img: <AiFillGithub />
         },
 
         {
             key: 'LinkedIn',
             to: 'https://www.linkedin.com/in/chanhuyng-shim-998456196/',
             label: 'link to LinkedIn',
-            img: <IoLogoLinkedin />
+            img: <AiFillLinkedin />
         }
     ];
 

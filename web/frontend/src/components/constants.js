@@ -5,4 +5,5 @@ export default {
     fontWeightMedium: '500',
     fontWeightNormal: '400',
     priorStackOrder: '50',
+    defaultTransition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
 };
