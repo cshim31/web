@@ -120,10 +120,6 @@ LinkGroup.propTypes = {
     LinkbarPages: PropTypes.arrayOf(PropTypes.object),
 };
 
-const MenuWrapper = styled.div`
-
-`;
-
 
 const Header = () => {
 

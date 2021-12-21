@@ -3,12 +3,23 @@ import {
     AiFillGithub,
     AiFillLinkedin
 } from 'react-icons/ai';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import constants from '../constants';
 
 const VerticalAlignDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    & a {
+        color: ${constants.primaryTextColor};
+        &:hover {
+            color: ${constants.primaryTextColor};
+            opacity: 0.6;
+        }
+    }
 `;
 
 const LogoContainer = styled.div`
@@ -40,19 +51,19 @@ ImageWrapper.propTypes = {
     SocialLink: PropTypes.object,
 }
 
-const SocialGroup = () => {
+const SocialGroup = ({ links }) => {
 
     const SocialLinks = [
         {
             key: 'GitHub',
-            to: 'https://github.com/cshim31/web',
+            to: links.github,
             label: 'link to GitHub',
             img: <AiFillGithub />
         },
 
         {
             key: 'LinkedIn',
-            to: 'https://www.linkedin.com/in/chanhuyng-shim-998456196/',
+            to: links.linkedin,
             label: 'link to LinkedIn',
             img: <AiFillLinkedin />
         }
@@ -73,4 +84,17 @@ const SocialGroup = () => {
     );
 };
 
-export default SocialGroup;
+SocialGroup.propTypes = {
+    links: PropTypes.object
+};
+
+const mapStateToProps = (state) => ({
+
+    links:  {
+        github: state.metadata.payload.link_github,
+        linkedin: state.metadata.payload.link_linkedin,
+    },
+
+});
+
+export default connect(mapStateToProps)(SocialGroup);

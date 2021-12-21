@@ -1,3 +1,7 @@
 {
-    "app_logo": "cshim"
+    "app_logo": "cshim",
+    "app_description": "Open Source Website",
+    "app_owner_name": "Chanhuyng Shim",
+    "link_github": "https://github.com/cshim31/web",
+    "link_linkedin": "https://www.linkedin.com/in/chanhuyng-shim-998456196/"
 }
