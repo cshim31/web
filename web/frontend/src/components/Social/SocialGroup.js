@@ -12,14 +12,6 @@ const VerticalAlignDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    & a {
-        color: ${constants.primaryTextColor};
-        &:hover {
-            color: ${constants.primaryTextColor};
-            opacity: 0.6;
-        }
-    }
 `;
 
 const LogoContainer = styled.div`

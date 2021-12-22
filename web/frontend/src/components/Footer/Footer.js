@@ -9,15 +9,22 @@ import SocialGroup from '../Social';
 import Description from '../Description';
 
 const StyledFooter = styled.footer`
-    background-color: ${constants.defaultPrimaryColor} !important;
+    background-color: ${constants.defaultSecondaryColor} !important;
     width: 100%;
     bottom: 0;
-    height: 160px;
+    height: auto;
 
+    & a {
+        color: ${constants.defaultPrimaryTextColor};
+        &:hover {
+            color: ${constants.defaultPrimaryTextColor};
+            opacity: 0.6;
+        }
+    }
 `;
 
 const StyledDiv = styled.div`
-    margin: 45px 16px 8px 50px; 
+    margin: 45px 16px 30px 50px; 
     display: flex;
     flex-direction: column;
 `;

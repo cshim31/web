@@ -29,9 +29,9 @@ const StyledToolBar = styled(Toolbar)`
     width: 100%;
     z-index: ${constants.priorStackOrder};
     & a {
-    color: ${constants.primaryTextColor};
+    color: ${constants.defaultPrimaryTextColor};
     &:hover {
-        color: ${constants.primaryTextColor};
+        color: ${constants.defaultPrimaryTextColor};
         opacity: 0.6;
         }
     }

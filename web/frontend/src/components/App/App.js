@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import Normalize from './Normalize';
 import constants from '../constants';
 import Header from '../Header';
 import Banner from '../Banner';
@@ -10,7 +11,7 @@ const StyledDiv = styled.div`
     flex-direction: column; 
     align-items: center;
     justify-content: center;
-
+    
     & a {
       &:hover {
         transition: ${constants.defaultTransition};
@@ -29,12 +30,14 @@ const BodyWrapper = styled.div`
 function App() {
   return (
     <StyledDiv>
-        <Header />
-        <BodyWrapper>
-          <Banner />
-        </BodyWrapper>
-        <Footer />
-    </StyledDiv>
+      <Normalize />
+      <Header />
+      <BodyWrapper>
+        <Banner />
+          
+      </BodyWrapper>
+      <Footer />
+  </StyledDiv>
     
   );
 }

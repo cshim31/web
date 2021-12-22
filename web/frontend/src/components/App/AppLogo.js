@@ -9,11 +9,11 @@ import constants from '../constants';
 const StyledLink = styled(Link)`
   font-weight: ${constants.fontWeightMedium};
   font-size: ${constants.fontSizeMedium};
-  color: ${constants.primaryTextColor};
+  color: ${constants.defaultPrimaryTextColor};
   text-transform: uppercase;
   text-decoration: none;
   &:hover {
-    color: ${constants.primaryTextColor};
+    color: ${constants.defaultPrimaryTextColor};
     opacity: 0.6;
   }
 `;

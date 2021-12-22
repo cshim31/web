@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 import constants from '../constants';
 
@@ -25,6 +26,11 @@ const AppDescription = ({ description, name }) => {
             </StyledSpan>
         </DescriptionDiv>
     );
+};
+
+AppDescription.propTypes = {
+    description: PropTypes.string,
+    name: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({

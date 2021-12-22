@@ -2,6 +2,17 @@
     "app_logo": "cshim",
     "app_description": "Open Source Website",
     "app_owner_name": "Chanhuyng Shim",
+    "banner_header": "Hey, I'm Chanhuyung Shim",
+    "banner_description": [
+        {
+            "key": "description_1",
+            "content": "I'm motivated software engineer to find optimized solution."
+        },
+        {
+            "key": "description_2",
+            "content": "I focus on logical reasoning for every architecture decision."
+        }
+    ],
     "link_github": "https://github.com/cshim31/web",
     "link_linkedin": "https://www.linkedin.com/in/chanhuyng-shim-998456196/"
 }
