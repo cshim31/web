@@ -8,6 +8,7 @@ export default {
     defaultSecondaryTextColor: 'rgba(255, 255, 255, 0.29)',
     defaultSecondaryTextColorSolid: 'rgba(255, 255, 255, 0.67)',
     defaultPrimaryGradient: 'linear-gradient(#9198e5, #ffffff)',
+    ContainerHeightMedium: '1200px',
     fontWeightMedium: '500',
     fontWeightNormal: '400',
     fontWeightSmall: '300',

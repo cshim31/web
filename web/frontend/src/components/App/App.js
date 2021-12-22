@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 import Normalize from './Normalize';
 import constants from '../constants';
 import Header from '../Header';
-import Banner from '../Banner';
 import Footer from '../Footer';
+import Home from '../Home';
 
 const StyledDiv = styled.div`
     display: flex;
@@ -19,23 +24,16 @@ const StyledDiv = styled.div`
     }
 `;
 
-const BodyWrapper = styled.div`
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 100%;
-    min-height: 1200px;
-`;
-
 function App() {
   return (
     <StyledDiv>
       <Normalize />
       <Header />
-      <BodyWrapper>
-        <Banner />
-          
-      </BodyWrapper>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
   </StyledDiv>
     
