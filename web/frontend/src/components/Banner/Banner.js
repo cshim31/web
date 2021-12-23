@@ -42,21 +42,24 @@ const TextWrapper = styled.div`
     justify-content: center;
     font-size: ${constants.fontSizeMedium};
     color: ${constants.defaultPrimaryTextColor};
-
+    max-width: 31%;
 `;
 
-const Banner = ({ bannerInfo }) => {
+const StyledHeader = styled.div`
+    font: ${constants.fontStyleLarge};
+    font-weight: bold;
+`;
+
+const StyledDescription = styled.p`
+    font: ${constants.fontStyleMedium};
+`;
+
+const Banner = ({ payload }) => {
     return (
         <BannerDiv>
             <TextWrapper>
-                <h3> {bannerInfo.header} </h3>
-                {
-                    bannerInfo.description.map((description) => {
-                        return (
-                            <p key={description.key}> {description.content} </p>
-                        );
-                    })
-                }
+                <StyledHeader> {payload.app_owner_header} </StyledHeader>
+                <StyledDescription> {payload.app_owner_description} </StyledDescription>
             </TextWrapper>
             <ImageWrapper>
                 <img
@@ -71,20 +74,11 @@ const Banner = ({ bannerInfo }) => {
 };
 
 Banner.propTypes = {
-    bannerInfo: PropTypes.shape({
-        header: PropTypes.string,
-        description: PropTypes.arrayOf(PropTypes.shape({
-            key: PropTypes.string,
-            content: PropTypes.string,
-        })),
-    }),
+    payload: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({
-    bannerInfo: {
-        header: state.metadata.payload.banner_header,
-        description: state.metadata.payload.banner_description,
-    } 
+    payload: state.metadata.payload,
 });
 
 export default connect(mapStateToProps)(Banner);

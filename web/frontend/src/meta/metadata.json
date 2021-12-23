@@ -2,17 +2,18 @@
     "app_logo": "cshim",
     "app_description": "Open Source Website",
     "app_owner_name": "Chanhuyng Shim",
-    "banner_header": "Hey, I'm Chanhuyung Shim",
-    "banner_description": [
-        {
-            "key": "description_1",
-            "content": "I'm motivated software engineer to find optimized solution."
-        },
-        {
-            "key": "description_2",
-            "content": "I focus on logical reasoning for every architecture decision."
-        }
-    ],
+    "app_owner_header": "Hey, I'm Chanhuyung Shim",
+    "app_owner_description": "I'm motivated software engineer to find optimized solution. I focus on logical reasoning for every architecture decision.",
+    "skill_language_header": "General Purpose Programming Language",
+    "skill_language_description": "Programming language for building software in variety of applications including C/C++, Python, Java",
+    "skill_tool_header": "General Purpose Programming Language",
+    "skill_tool_description": "Programming language for building software in variety of applications including C/C++, Python, Java",
+    "skill_personality_header": "General Purpose Programming Language",
+    "skill_personality_description": "Programming language for building software in variety of applications including C/C++, Python, Java",
+    "experience_corporation_header": "Corporation Project",
+    "experience_corporation_description": "I experienced and learned how my skills can be contributed to industry.",
+    "experience_personal_header": "Side Project",
+    "experience_personal_description": "I developed applications that reduced burdens and resolve technical curiosity.",
     "link_github": "https://github.com/cshim31/web",
     "link_linkedin": "https://www.linkedin.com/in/chanhuyng-shim-998456196/"
 }

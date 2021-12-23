@@ -9,7 +9,7 @@ import SocialGroup from '../Social';
 import Description from '../Description';
 
 const StyledFooter = styled.footer`
-    background-color: ${constants.defaultSecondaryColor} !important;
+    background-color: ${constants.defaultSecondaryColorSolid} !important;
     width: 100%;
     bottom: 0;
     height: auto;

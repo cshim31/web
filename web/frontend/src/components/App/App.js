@@ -18,6 +18,7 @@ const StyledDiv = styled.div`
     justify-content: center;
     
     & a {
+      text-decoration: none;
       &:hover {
         transition: ${constants.defaultTransition};
       }

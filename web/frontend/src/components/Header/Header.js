@@ -20,7 +20,7 @@ import ReportTab from '../ReportTab';
 
 const StyledToolBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
-    background-color: ${constants.defaultPrimaryColorSolid} !important;
+    background-color: ${constants.defaultPrimaryColor} !important;
     height: 56px;
     left: 0;
     padding: 0px 16px !important;
