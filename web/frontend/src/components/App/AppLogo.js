@@ -8,7 +8,7 @@ import constants from '../constants';
 
 const StyledLink = styled(Link)`
   font-weight: ${constants.fontWeightMedium};
-  font-size: ${constants.fontSizeMedium};
+  font-size: ${constants.fontSizeSemi};
   color: ${constants.defaultPrimaryTextColor};
   text-transform: uppercase;
   text-decoration: none;

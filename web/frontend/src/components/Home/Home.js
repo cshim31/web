@@ -1,8 +1,4 @@
 import styled from '@emotion/styled';
-import {
-    Card,
-    CardContent
-} from '@mui/material';
 
 import constants from '../constants';
 import Banner from "../Banner";
@@ -29,9 +25,5 @@ const Home = () => {
         </HomeContainer>
     );
 };
-
-const mapStateToProps = (state) => ({
-    payload: state.metadata.payload,
-});
 
 export default Home;

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import bannerImg from '../../img/template.png';
+import bannerImg from '../../img/developer_wide.png';
 import constants from '../constants';
 
 const BannerDiv = styled.div`
@@ -12,7 +12,7 @@ const BannerDiv = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: ${constants.defaultPrimaryGradient};
+    background-color: #D5F7E6;
     
     & img {
         max-width: 100%;
@@ -66,7 +66,6 @@ const Banner = ({ payload }) => {
                     src= {bannerImg}
                     alt='Developer vector'
                 />
-                <a href='http://www.freepik.com'>Designed by Freepik</a>
             </ImageWrapper>
         </BannerDiv>
 

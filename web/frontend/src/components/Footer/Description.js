@@ -14,7 +14,7 @@ const DescriptionDiv = styled.div`
 
 const StyledSpan = styled.span`
     font-weight: ${constants.fontWeightSmall};
-    font-size: ${constants.fontSizeSmall};
+    font-size: ${constants.fontSizeMini};
     color: ${constants.secondaryTextColor};
 `;
 

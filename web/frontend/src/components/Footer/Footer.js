@@ -6,7 +6,8 @@ import {
 import constants from '../constants';
 import AppLogo from '../App/AppLogo';
 import SocialGroup from '../Social';
-import Description from '../Description';
+import Description from './Description';
+import Credit from './Credit';
 
 const StyledFooter = styled.footer`
     background-color: ${constants.defaultSecondaryColorSolid} !important;
@@ -49,7 +50,7 @@ const Footer = () => {
                     <Description />
                 </VerticalAlignDiv>
                 <VerticalAlignDiv>
-                    
+                    <Credit />
                 </VerticalAlignDiv>
             </StyledDiv>
         </StyledFooter>

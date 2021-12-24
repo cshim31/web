@@ -1,12 +1,8 @@
 import styled from '@emotion/styled';
-import { 
-    AiFillGithub,
-    AiFillLinkedin
-} from 'react-icons/ai';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
-import constants from '../constants';
 
 const VerticalAlignDiv = styled.div`
     display: flex;
@@ -50,14 +46,14 @@ const SocialGroup = ({ links }) => {
             key: 'GitHub',
             to: links.github,
             label: 'link to GitHub',
-            img: <AiFillGithub />
+            img: <GitHubIcon />
         },
 
         {
             key: 'LinkedIn',
             to: links.linkedin,
             label: 'link to LinkedIn',
-            img: <AiFillLinkedin />
+            img: <LinkedInIcon />
         }
     ];
 
