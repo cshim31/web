@@ -10,6 +10,8 @@ import constants from '../constants';
 import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
+import Introduction from '../Introduction';
+import Experience from '../Experience';
 
 const StyledDiv = styled.div`
     display: flex;
@@ -29,10 +31,12 @@ function App() {
   return (
     <StyledDiv>
       <Normalize />
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/intro' element={<Introduction />} />
+          <Route path='/exp' element={<Experience />} />
         </Routes>
       </BrowserRouter>
       <Footer />

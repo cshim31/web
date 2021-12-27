@@ -166,23 +166,21 @@ const Header = ({ payload }) => {
 
     return(
         <StyledToolBar>
-            <Router>
-                <VerticalAlignDiv>
-                    <LogoGroup />
-                    <LinkGroup LinkbarPages={LinkbarPages}/>
-                </VerticalAlignDiv>
-                <VerticalAlignDiv>
-                    <NavigationLink payload={payload}/>
-                </VerticalAlignDiv>
-                <VerticalAlignDiv>
-                    
-                </VerticalAlignDiv>
-                <VerticalAlignDiv style={{ marginLeft: 'auto', marginRight:'3%'}}>
-                    <Settings>
-                        <ReportTab />
-                    </Settings>
-                </VerticalAlignDiv>
-            </Router>
+            <VerticalAlignDiv>
+                <LogoGroup />
+                <LinkGroup LinkbarPages={LinkbarPages}/>
+            </VerticalAlignDiv>
+            <VerticalAlignDiv>
+                <NavigationLink payload={payload}/>
+            </VerticalAlignDiv>
+            <VerticalAlignDiv>
+                
+            </VerticalAlignDiv>
+            <VerticalAlignDiv style={{ marginLeft: 'auto', marginRight:'3%'}}>
+                <Settings>
+                    <ReportTab />
+                </Settings>
+            </VerticalAlignDiv>
         </StyledToolBar>
     );
 };
