@@ -12,6 +12,7 @@ import {
 } from '@mui/icons-material';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import constants from '../constants';
 import AppLogo from '../App/AppLogo';
@@ -105,6 +106,25 @@ const LinkGroup = ({ LinkbarPages }) => {
     );
 };
 
+
+LinkGroup.propTypes = {
+    LinkbarPages: PropTypes.arrayOf(PropTypes.object),
+};
+
+const NavigationLink = ({ payload }) => {
+    return (
+        <TabContainer>
+            <LinkWrapper>
+                <a href={payload.app_github_link}> {payload.app_github_label} </a>
+            </LinkWrapper>
+        </TabContainer>
+    );
+}
+
+NavigationLink.propTypes = {
+    payload: PropTypes.object,
+};
+
 const LinkWrapper = styled.div`
     @media screen and (max-width: 800px) {
         display: none;
@@ -116,12 +136,14 @@ const StyledLink = styled(Link)`
     text-decoration: none;
 `;
 
+
+
 LinkGroup.propTypes = {
     LinkbarPages: PropTypes.arrayOf(PropTypes.object),
 };
 
 
-const Header = () => {
+const Header = ({ payload }) => {
 
     const LinkbarPages = [
         {
@@ -140,14 +162,6 @@ const Header = () => {
             label: 'Experience',
         },
     
-        {
-            key: 'page_git',
-            to:{
-                pathname:'/git'
-            },
-            label: 'GitHub',
-        },
-    
     ];
 
     return(
@@ -157,20 +171,28 @@ const Header = () => {
                     <LogoGroup />
                     <LinkGroup LinkbarPages={LinkbarPages}/>
                 </VerticalAlignDiv>
+                <VerticalAlignDiv>
+                    <NavigationLink payload={payload}/>
+                </VerticalAlignDiv>
+                <VerticalAlignDiv>
+                    
+                </VerticalAlignDiv>
                 <VerticalAlignDiv style={{ marginLeft: 'auto', marginRight:'3%'}}>
                     <Settings>
                         <ReportTab />
                     </Settings>
-                </VerticalAlignDiv>
-                <VerticalAlignDiv>
-                    
-                </VerticalAlignDiv>
-                <VerticalAlignDiv>
-                    
                 </VerticalAlignDiv>
             </Router>
         </StyledToolBar>
     );
 };
 
-export default Header;
+Header.propTypes = {
+    payload: PropTypes.object,
+}
+
+const mapStateToProps = (state) => ({
+    payload: state.metadata.payload,    
+});
+
+export default connect(mapStateToProps)(Header);

@@ -5,6 +5,10 @@ const CreditDiv = styled.div`
     align-items: center;
     justify-content: center;
     margin: 7px 0 0 0;
+
+    & a {
+        color: 
+    }
 `;
 
 const LinkWrapper = styled.div`

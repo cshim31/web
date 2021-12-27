@@ -42,6 +42,7 @@ const TextWrapper = styled.div`
     justify-content: center;
     font-size: ${constants.fontSizeMedium};
     color: ${constants.defaultPrimaryTextColor};
+    margin: 0 100px 0 0;
     max-width: 31%;
 `;
 

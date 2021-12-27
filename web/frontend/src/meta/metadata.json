@@ -4,6 +4,9 @@
     "app_owner_name": "Chanhuyng Shim",
     "app_owner_header": "Hey, I'm Chanhuyung Shim",
     "app_owner_description": "I'm motivated software engineer to find optimized solution. I focus on logical reasoning for every architecture decision.",
+    "app_github_link": "https://github.com/cshim31",
+    "app_github_label": "GitHub",
+    "app_linkedin_link": "https://www.linkedin.com/in/chanhuyng-shim-998456196/",
     "skill_language_header": "General Purpose Programming Language",
     "skill_language_description": "Programming language for building software in variety of applications including C/C++, Python, Java",
     "skill_principle_header": "Hardware/Software System",
@@ -11,11 +14,9 @@
     "skill_personality_header": "Self-actualization",
     "skill_personality_description": "Strong desire to learn actual software programming technique in industry",
     "experience_corporation_header": "Corporation Project",
-    "experience_corporation_description": "I experienced and learned how my skills can be contributed to industry.",
+    "experience_corporation_description": "I experienced teamwork and learned how I should communite with team. Moreover, I realized meaning of my contribution to corporation.",
     "experience_corporation_link": "/experience",
     "experience_personal_header": "Side Project",
-    "experience_personal_description": "I developed applications that reduced burdens and resolve technical curiosity.",
-    "experience_personal_link": "/experience",
-    "link_github": "https://github.com/cshim31/web",
-    "link_linkedin": "https://www.linkedin.com/in/chanhuyng-shim-998456196/"
+    "experience_personal_description": "I developed applications that reduced burdens and resolved technical curiosity.",
+    "experience_personal_link": "/experience"
 }

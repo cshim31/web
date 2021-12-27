@@ -46,13 +46,23 @@ const ExperienceContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: auto;
 `;
 
 const StyledCard = styled(Card)`
-    width: 35%
-    height: 500px;
+    max-width: 35%;
+    height: 525px;
     margin: 80px 30px 30px 0;
+`;
+
+const Image = (props) => {
+    return (
+        <StyledImage {...props} />
+    );
+}
+
+const StyledImage = styled.img`
+    max-height: 300px;
 `;
 
 const StyledHeader = styled.div`
@@ -60,19 +70,28 @@ const StyledHeader = styled.div`
 `;
 
 const StyledDescription = styled.p`
+    height: 100px;
     font: ${constants.fontStyleSmall};
 `;
 
+const DetailedLink = (props) => {
+    return (
+        <StyledLink {...props}>
+            {'Detail'}
+        </StyledLink>
+    );
+}
+
 const StyledLink = styled(Link)`
-  font-weight: ${constants.fontWeightMedium};
-  font-size: ${constants.fontSizeMedium};
-  color: ${constants.defaultPrimaryRefColor};
-  text-transform: uppercase;
-  text-decoration: none;
-  &:hover {
+    font-weight: ${constants.fontWeightMedium};
+    font-size: ${constants.fontSizeSmall};
     color: ${constants.defaultPrimaryRefColor};
-    opacity: 0.8;
-  }
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+        color: ${constants.defaultPrimaryRefColor};
+        opacity: 0.8;
+    }
 `;
 
 const ExperienceGroup = ({ payload }) => {
@@ -80,36 +99,30 @@ const ExperienceGroup = ({ payload }) => {
         <ExperienceContainer>
             <StyledCard>
                 <CardContent>
-                    <img
+                    <Image
                         src= {corporationImg}
-                        alt='Corporation vector'
-                        width='400px'/>
+                        alt='Corporation vector'/>
                     <StyledHeader>
                         {payload.experience_corporation_header}
                     </StyledHeader>
                     <StyledDescription>
                         {payload.experience_corporation_description}
                     </StyledDescription>
-                    <StyledLink aria-label='go to experience tab' to={payload.experience_corporation_link}>
-                        {'Detail'}
-                    </StyledLink>
+                    <DetailedLink aria-label='go to experience tab' to={payload.experience_corporation_link}/>
                 </CardContent>
             </StyledCard>
             <StyledCard>
                 <CardContent>
-                    <img
+                    <Image
                         src= {individualImg}
-                        alt='Developer vector'
-                        width='300px'/>
+                        alt='Developer vector'/>
                     <StyledHeader>
                         {payload.experience_personal_header}
                     </StyledHeader>
                     <StyledDescription>
                         {payload.experience_personal_description}
                     </StyledDescription>
-                    <StyledLink aria-label='go to experience tab' to={payload.experience_personal_link}>
-                        {'Detail'}
-                    </StyledLink>
+                    <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link}/>
                 </CardContent>
             </StyledCard>
         </ExperienceContainer>

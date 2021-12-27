@@ -39,19 +39,19 @@ ImageWrapper.propTypes = {
     SocialLink: PropTypes.object,
 }
 
-const SocialGroup = ({ links }) => {
+const SocialGroup = ({ payload }) => {
 
     const SocialLinks = [
         {
             key: 'GitHub',
-            to: links.github,
+            to: payload.app_github_link,
             label: 'link to GitHub',
             img: <GitHubIcon />
         },
 
         {
             key: 'LinkedIn',
-            to: links.linkedin,
+            to: payload.app_linkedin_link,
             label: 'link to LinkedIn',
             img: <LinkedInIcon />
         }
@@ -73,15 +73,12 @@ const SocialGroup = ({ links }) => {
 };
 
 SocialGroup.propTypes = {
-    links: PropTypes.object
+    payload: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({
 
-    links:  {
-        github: state.metadata.payload.link_github,
-        linkedin: state.metadata.payload.link_linkedin,
-    },
+    payload: state.metadata.payload,
 
 });
 
