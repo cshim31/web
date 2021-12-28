@@ -42,7 +42,6 @@ Topic.propTypes = {
 }
 
 const ExperienceContainer = styled.div`
-    background-color: inherit;
     display: flex;
     align-items: center;
     justify-content: center;

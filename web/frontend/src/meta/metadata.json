@@ -18,5 +18,11 @@
     "experience_corporation_link": "/experience",
     "experience_personal_header": "Side Project",
     "experience_personal_description": "I developed applications that reduced burdens and resolved technical curiosity.",
-    "experience_personal_link": "/experience"
+    "experience_personal_link": "/experience",
+    "intro_developer_header": "Developer Introduction",
+    "intro_developer_description": "I'm pursuing academic learning with computer engineering major in Georgia Tech. I'm motivated to find, learn, and implement efficient solution for problems. I focus on what is needed and what is not needed to have a successful outcome.",
+    "intro_skill_header": "Skill",
+    "intro_skill_description": "I have gained diverse programming experience over work and side project. Throughout the programming practice, I consolidated understanding and decision making strategy in programming.",
+    "intro_work_experience_header": "Work Experience",
+    "intro_work_experience_description": "I interned in GTRI (Georgia Tech Research Institute) as a software research assistant for two semesters. I was in charge of assisting research in high level programming. I mainly worked on researching and implenthing technical solutions to web development and embedded system. Over the 6 month, I had meaningful work experience in team oriented environment and learned importance of communication skill."
 }

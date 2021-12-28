@@ -1,8 +1,8 @@
 export default {
     defaultPrimaryColor: 'rgba(255, 255, 255, 0.8)', // header
     defaultPrimaryColorSolid: 'rgba(255, 255, 255, 0.4)',
-    defaultSecondaryColor: 'rgba(230, 230, 230, 1)', // experience
-    defaultSecondaryColorSolid: 'rgba(0, 0, 0, 0.3)', // footer
+    defaultSecondaryColor: 'rgba(230, 230, 230, 0.5)', // experience
+    defaultSecondaryColorSolid: 'rgba(0, 0, 0, 0.15)', // footer
     defaultPrimaryTextColor: 'rgba(0, 0, 0, 0.87)',
     defaultPrimaryTextColorSolid: 'rgba(0, 0, 0, 0.3)',
     defaultSecondaryTextColor: 'rgba(255, 255, 255, 0.29)',
@@ -12,6 +12,7 @@ export default {
     ContainerHeightMedium: '1200px',
     fontStyleLarge: 'normal 30px sans-serif',
     fontStyleMedium: 'normal 24px sans-serif',
+    fontStyleSemi: 'normal 20px sans-serif',
     fontStyleSmall: 'normal 17px sans-serif',
     fontWeightMedium: '500',
     fontWeightNormal: '400',
