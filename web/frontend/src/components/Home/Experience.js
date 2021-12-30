@@ -5,9 +5,9 @@ import {
     Card,
     CardContent 
 } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 import constants from '../constants';
+import HyperLink from '../Link';
 import corporationImg from '../../img/corporation.png';
 import individualImg from '../../img/developer.png';
 
@@ -73,25 +73,6 @@ const StyledDescription = styled.p`
     font: ${constants.fontStyleSmall};
 `;
 
-const DetailedLink = (props) => {
-    return (
-        <StyledLink {...props}>
-            {'Detail'}
-        </StyledLink>
-    );
-}
-
-const StyledLink = styled(Link)`
-    font-weight: ${constants.fontWeightMedium};
-    font-size: ${constants.fontSizeSmall};
-    color: ${constants.defaultPrimaryRefColor};
-    text-transform: uppercase;
-    text-decoration: none;
-    &:hover {
-        color: ${constants.defaultPrimaryRefColor};
-        opacity: 0.8;
-    }
-`;
 
 const ExperienceGroup = ({ payload }) => {
     return (
@@ -100,28 +81,28 @@ const ExperienceGroup = ({ payload }) => {
                 <CardContent>
                     <Image
                         src= {corporationImg}
-                        alt='Corporation vector'/>
+                        alt='Communication flat image'/>
                     <StyledHeader>
                         {payload.experience_corporation_header}
                     </StyledHeader>
                     <StyledDescription>
                         {payload.experience_corporation_description}
                     </StyledDescription>
-                    <DetailedLink aria-label='go to experience tab' to={payload.experience_corporation_link}/>
+                    <HyperLink aria-label='go to experience tab' to={payload.experience_corporation_link}> {'Detail'} </HyperLink>
                 </CardContent>
             </StyledCard>
             <StyledCard>
                 <CardContent>
                     <Image
                         src= {individualImg}
-                        alt='Developer vector'/>
+                        alt='Colourful programmer working illustration'/>
                     <StyledHeader>
                         {payload.experience_personal_header}
                     </StyledHeader>
                     <StyledDescription>
                         {payload.experience_personal_description}
                     </StyledDescription>
-                    <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link}/>
+                    <HyperLink aria-label='go to experience tab' to={payload.experience_personal_link}> {'Detail'} </HyperLink>
                 </CardContent>
             </StyledCard>
         </ExperienceContainer>

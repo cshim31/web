@@ -65,7 +65,7 @@ const Banner = ({ payload }) => {
             <ImageWrapper>
                 <img
                     src= {bannerImg}
-                    alt='Developer vector'
+                    alt='Website creator concept illustration'
                 />
             </ImageWrapper>
         </BannerDiv>

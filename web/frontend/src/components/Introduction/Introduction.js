@@ -3,6 +3,9 @@ import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 
 import constants from '../constants';
+import Skill from './Skill';
+import HyperLink from '../Link';
+import expImg from '../../img/experience.png';
 
 const IntroductionContainer = styled.div`
     display: flex;
@@ -20,7 +23,7 @@ const HorizontalAlignDiv = styled.div`
 
 
 const StyledTextDiv = styled.div`
-    max-width: 40%;
+    max-width: 60%;
 `;
 
 const StyledHeader = styled.h1`
@@ -54,57 +57,47 @@ const PaddedDiv = styled.div`
     padding: 100px 0 0 0;
 `;
 
-const DeveloperIntroduction = ({ payload }) => {
+const DetailedLink = (props) => {
     return (
-        <HorizontalAlignDiv>
-            <TextBox header={payload.intro_developer_header} description={payload.intro_developer_description}/>
-        </HorizontalAlignDiv>
-    );
-}
+        <CenterDiv>
+            <HyperLink {...props}>
+                {'Detail'}
+            </HyperLink>
+        </CenterDiv>
+    )
+};
 
-DeveloperIntroduction.propTypes = {
-    payload: PropTypes.object,
-}
-
-const SkillIntroduction = ({ payload }) => {
-    return (
-        <PaddedDiv>
-            <HorizontalAlignDiv>
-                <TextBox header={payload.intro_skill_header} description={payload.intro_skill_description}/>
-                <ImageWrapper />
-            </HorizontalAlignDiv>
-        </PaddedDiv>
-    );
-}
-
-SkillIntroduction.propTypes = {
-    payload: PropTypes.object,
-}
-
-
-const ExpIntroduction = ({ payload }) => {
-    return (
-        <PaddedDiv>
-            <HorizontalAlignDiv>
-                <TextBox header={payload.intro_work_experience_header} description={payload.intro_work_experience_description}/>
-                <ImageWrapper />
-            </HorizontalAlignDiv>
-        </PaddedDiv>
-    );
-}
-
-ExpIntroduction.propTypes = {
-    payload: PropTypes.object,
-}
-
+const CenterDiv = styled.div`
+    padding: 70px 0 0 0;
+    text-align: center;
+`;
 
 const Introduction = ({ payload }) => {
 
     return (
         <IntroductionContainer>
-            <DeveloperIntroduction payload={payload}/>
-            <SkillIntroduction payload={payload}/>
-            <ExpIntroduction payload={payload} />
+            <HorizontalAlignDiv>
+                <TextBox header={payload.intro_developer_header} description={payload.intro_developer_description}/>
+            </HorizontalAlignDiv>
+            <PaddedDiv>
+                <HorizontalAlignDiv>
+                    <Skill/>
+                    <StyledTextDiv style={{maxWidth: '20%'}}>
+                        <StyledHeader> {payload.intro_skill_header} </StyledHeader>
+                        <StyledDescription> {payload.intro_skill_description} </StyledDescription>
+                    </StyledTextDiv>
+                </HorizontalAlignDiv>
+            </PaddedDiv>
+            <PaddedDiv>
+                <HorizontalAlignDiv>
+                    <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
+                    <StyledTextDiv style={{maxWidth: '36%'}}>
+                        <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
+                        <StyledDescription> {payload.intro_work_experience_description} </StyledDescription>
+                        <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
+                    </StyledTextDiv>
+                </HorizontalAlignDiv>
+            </PaddedDiv>
         </IntroductionContainer>
     );
 };
