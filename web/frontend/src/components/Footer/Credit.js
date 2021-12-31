@@ -7,7 +7,6 @@ const CreditDiv = styled.div`
     margin: 7px 0 0 0;
 
     & a {
-        color: 
     }
 `;
 
@@ -28,6 +27,10 @@ const Credit = () => {
             <span> {' | '} </span>
             <LinkWrapper>
                 <a href='https://www.freepik.com/vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
+            </LinkWrapper>
+            <span> {' | '} </span>
+            <LinkWrapper>
+                <a href='https://www.freepik.com/vectors/people'>People vector created by pch.vector - www.freepik.com</a>
             </LinkWrapper>
         </CreditDiv>
     );

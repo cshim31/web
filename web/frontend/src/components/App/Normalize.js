@@ -4,6 +4,7 @@ import constants from '../constants';
 const Normalize = createGlobalStyle`
     body {
         margin: 0;
+        font-family: sans-serif;
     }
 `
 

@@ -9,7 +9,6 @@ export default {
     defaultSecondaryTextColorSolid: 'rgba(255, 255, 255, 0.67)',
     defaultPrimaryGradient: 'linear-gradient(#9198e5, #ffffff)',
     defaultPrimaryRefColor: 'rgba(15, 155, 246, 1)',
-    ContainerHeightMedium: '1200px',
     fontStyleLarge: 'normal 30px sans-serif',
     fontStyleMedium: 'normal 24px sans-serif',
     fontStyleSemi: 'normal 20px sans-serif',
@@ -24,5 +23,7 @@ export default {
     fontSizeMini: '12px',
     inlineSizeMedium: '600px',
     priorStackOrder: '50',
+    containerHeightMedium: '1200px',
+    defaultHeaderHeight: '56px',
     defaultTransition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
 };

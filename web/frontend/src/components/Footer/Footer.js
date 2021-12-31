@@ -10,10 +10,10 @@ import Description from './Description';
 import Credit from './Credit';
 
 const StyledFooter = styled.footer`
+    display: flex;
     background-color: ${constants.defaultSecondaryColorSolid} !important;
     width: 100%;
     bottom: 0;
-    height: auto;
 
     & a {
         color: ${constants.defaultPrimaryTextColor};

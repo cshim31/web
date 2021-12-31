@@ -11,7 +11,7 @@ const IntroductionContainer = styled.div`
     display: flex;
     flex-direction: column; 
     justify-content: center;
-    min-height: ${constants.ContainerHeightMedium};
+    min-height: ${constants.containerHeightMedium};
     height: auto;
 `;
 
@@ -26,32 +26,18 @@ const StyledTextDiv = styled.div`
     max-width: 60%;
 `;
 
-const StyledHeader = styled.h1`
+const StyledHeader = styled.h3`
     font-size: ${constants.fontSizeLarge};
 `;
 
-const StyledDescription = styled.div`
+const StyledDescription = styled.p`
     padding: 17px 0 0 0;
-    font: ${constants.fontStyleSemi};
+    font-size: ${constants.fontSizeSmall};
 `;
 
 const ImageWrapper = styled.img`
     margin: 0 0 0 50px;
 `;
-
-const TextBox = ({ header, description }) => {
-    return (
-        <StyledTextDiv>
-            <StyledHeader> {header} </StyledHeader>
-            <StyledDescription> {description} </StyledDescription>
-        </StyledTextDiv>
-    );
-};
-
-TextBox.propTypes = {
-    header: PropTypes.string,
-    description: PropTypes.string,
-};
 
 const PaddedDiv = styled.div`
     padding: 100px 0 0 0;
@@ -77,12 +63,15 @@ const Introduction = ({ payload }) => {
     return (
         <IntroductionContainer>
             <HorizontalAlignDiv>
-                <TextBox header={payload.intro_developer_header} description={payload.intro_developer_description}/>
+            <StyledTextDiv style={{maxWidth: '62%'}}>
+                <StyledHeader> {payload.intro_developer_header} </StyledHeader>
+                <StyledDescription> {payload.intro_developer_description} </StyledDescription>
+            </StyledTextDiv>
             </HorizontalAlignDiv>
             <PaddedDiv>
                 <HorizontalAlignDiv>
                     <Skill/>
-                    <StyledTextDiv style={{maxWidth: '20%'}}>
+                    <StyledTextDiv style={{maxWidth: '30%'}}>
                         <StyledHeader> {payload.intro_skill_header} </StyledHeader>
                         <StyledDescription> {payload.intro_skill_description} </StyledDescription>
                     </StyledTextDiv>
@@ -90,12 +79,12 @@ const Introduction = ({ payload }) => {
             </PaddedDiv>
             <PaddedDiv>
                 <HorizontalAlignDiv>
-                    <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
                     <StyledTextDiv style={{maxWidth: '36%'}}>
                         <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
                         <StyledDescription> {payload.intro_work_experience_description} </StyledDescription>
                         <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
                     </StyledTextDiv>
+                    <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
                 </HorizontalAlignDiv>
             </PaddedDiv>
         </IntroductionContainer>

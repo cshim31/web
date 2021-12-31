@@ -10,7 +10,7 @@ const HomeContainer = styled.div`
     flex-direction: column; 
     align-items: center;
     width: 100%;
-    min-height: ${constants.ContainerHeightMedium};
+    min-height: ${constants.containerHeightMedium};
     height: auto;
 `;
 
