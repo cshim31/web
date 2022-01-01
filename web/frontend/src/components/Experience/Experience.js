@@ -11,76 +11,105 @@ import {
 }   from '@mui/material';
 
 import constants from '../constants';
-
+import gtriImg from '../../img/gtri.png';
+import gtTimeImg from '../../img/gtTime.png';
 
 const StyledExperience = styled.div`
     margin-top: 150px;
-    margin-left: 250px;
     min-height: ${constants.containerHeightMedium};
     height: auto;
 
     .corporation-section {
         display: block;
+        margin-left: 250px;
     }
 
     .corporation-overview {
-        max-width: 500px;
         text-transform: uppercase;
     }
 
     .side-section {
         display: block;
+        margin-left: 250px;
+        margin-top: 50px;
     }
 
     .side-overview {
-        max-width: 500px;
         text-transform: uppercase;
     }
 `;
 
 
 const StyledIcon = styled.img`
-    width: 50;
-    height: 50;
+    width: 100px
 `;
   
 const StyledDiv = styled.div`
     display: block;
-    max-width: 500px;
     max-height: 250px;
 `;  
 
-const TextBox = ({ strings }) => {
+const StyledLineBreak = styled.hr`
+    opacity: 0.6;
+    margin-top: 50px;
+`;
+
+const HeaderDiv = styled.div`
+    width: 200px;
+`
+
+const HeaderTextBox = ({ strings }) => {
     return (
         <StyledDiv>
             {
                 strings.map((string) => (
-                    <div>{string}</div>
+                    <HeaderDiv key={string}>
+                        {string}
+                    </HeaderDiv>
                 ))
             }
         </StyledDiv>
     );
 };
 
-const Corporations = ({ strings }) => {
+
+const SummaryDiv = styled.div`
+    width: 1000px;
+`
+
+const SummaryTextBox = ({ strings }) => {
     return (
-        <TableContainer sx={{ maxWidth: 600 }}>
-            <Table sx={{ minWidth: 100 }} aria-label="corporations table">
+        <StyledDiv>
+            {
+                strings.map((string) => (
+                    <SummaryDiv key={string}>
+                        {string}
+                    </SummaryDiv>
+                ))
+            }
+        </StyledDiv>
+    );
+};
+
+const ListTable = ({ strings }) => {
+    return (
+        <TableContainer>
+            <Table aria-label="list table">
                 <TableBody>
                     {
                         strings.map((row) => (
                             <TableRow
                             key={row.img}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
                             >
-                            <TableCell component="th" scope="row">
+                            <TableCell component="th" scope="row" sx={{ 'width': 100}}>
                                 {row.img}
                             </TableCell>
                             <TableCell align="left">
-                                <TextBox strings={row.desc}/>
+                                {row.desc}
                             </TableCell>
                             <TableCell align="left">
-                                <TextBox strings={row.role}/>
+                                {row.role}
                             </TableCell>
                             </TableRow>
                         ))
@@ -91,6 +120,14 @@ const Corporations = ({ strings }) => {
     );
 };
 
+ListTable.propTypes = {
+    strings: PropTypes.arrayOf(PropTypes.shape({
+        img: PropTypes.node,
+        desc: PropTypes.node,
+        role: PropTypes.node,
+    }))
+};
+
 
 const createData = (img, desc, role ) => {
     return { img, desc, role };
@@ -99,18 +136,26 @@ const createData = (img, desc, role ) => {
 
 const Experience = ({ payload }) => {
 
-    const strings = [
+    const corporationStrings = [
         createData (
-            undefined, 
-            [
-                'dafdfa', 'dafdfa', 'dafdfa'
-            ], 
-            
-            [
-                'dafdfa', 'dafdfa', 'dafdfa'
-            ]
+            <a href='https://gtri.gatech.edu/'>
+                <StyledIcon src={gtriImg} alt={'GTRI logo'} />
+            </a>,
+            <HeaderTextBox strings={['Georgia Tech Research Institute', '05.2020 ~ 12.2021']} />,
+            <SummaryTextBox strings={['SMARTS TEN branch', 'Developed embedded system of NI instruments', 'Built web frontend components and constructed business DB', 'Tools: C/C++, Docker, CMake, Javascript, HTML/CSS, React, Django']} />,
         ),
     ];
+
+    const sideStrings = [
+        createData (
+            <a href='https://play.google.com/store/apps/details?id=com.gttime.android'>
+                <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />
+            </a>,
+            <HeaderTextBox strings={['GT Time', '01.2021 ~ 05.2021', '08.2021 ~ 12.2021']} />,
+            <SummaryTextBox strings={['Android Application', 'Developed mobile application to assist Georgia Tech student managing course schedules and looking up available courses in real time', 'Learned data crawling and built own course crawling application ', 'Tools: Java, Python, Github Actions']} />,
+        ),
+    ]
+
 
     return (
         <StyledExperience>
@@ -121,8 +166,10 @@ const Experience = ({ payload }) => {
                 <div className='corporation-description'>
                     <p> {'Followings are project that I successfully managed'} </p>
                 </div>
-                <Corporations strings={strings} />
+                <ListTable strings={corporationStrings} />
             </div>
+
+            <StyledLineBreak />
 
             <div className='side-section'>
                 <div className='side-overview'>
@@ -131,7 +178,7 @@ const Experience = ({ payload }) => {
                 <div className='side-description'>
                     <p> {'Followings are project that I successfully managed'} </p>
                 </div>
-                <Corporations strings={strings} />
+                <ListTable strings={sideStrings} />
             </div>
         </StyledExperience>
     );
