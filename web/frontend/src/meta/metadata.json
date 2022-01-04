@@ -32,5 +32,20 @@
     "intro_skill_library_header": "Libraries",
     "intro_skill_library_content": "ReactJS",
     "intro_work_experience_header": "Work Experience",
-    "intro_work_experience_description": "I had experience with high level programming and communication from 6 month internship. I mainly worked on researching and implenthing technical solutions to web development and embedded system. Over the 6 month, I had meaningful work experience in team oriented environment and learned importance of communication skill."
+    "intro_work_experience_description": "I had experience with high level programming and communication from 6 month internship. I mainly worked on researching and implenthing technical solutions to web development and embedded system. Over the 6 month, I had meaningful work experience in team oriented environment and learned importance of communication skill.",
+    "exp_description": "Followings are project that I successfully managed",
+    "exp_corporation_gtri_type": "SMARTS TEN branch",
+    "exp_corporation_gtri_header": "Georgia Tech Research",
+    "exp_corporation_gtri_time_1": "01.2020 ~ 05.2021",
+    "exp_corporation_gtri_description_1": "Developed embedded system of NI instruments",
+    "exp_corporation_gtri_time_2": "08.2021 ~ 12.2021",
+    "exp_corporation_gtri_description_2": "Built web frontend components and constructed business DB",
+    "exp_corporation_gtri_tools": "Tools: C/C++, Docker, CMake, Javascript, HTML/CSS, React, Django",
+    "exp_side_gttime_type": "Android Application",
+    "exp_side_gttime_header": "GT Time",
+    "exp_side_gttime_time_1": "01.2021 ~ 05.2021",
+    "exp_side_gttime_description_1": "Developed mobile application to assist Georgia Tech student managing course schedules and looking up available courses in real time",
+    "exp_side_gttime_time_2": "08.2021 ~ 12.2021",
+    "exp_side_gttime_description_2": "Learned data crawling and built own course crawling application",
+    "exp_side_gttime_tools": "Tools: Java, Python, SQL, AWS, Github Actions"
 }

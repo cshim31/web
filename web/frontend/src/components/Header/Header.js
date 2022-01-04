@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 import constants from '../constants';
 import AppLogo from '../App/AppLogo';
 import Settings from '../Settings';
-import ReportTab from '../ReportTab';
+import Report from '../SettingsGroup';
 
 const StyledToolBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
@@ -178,7 +178,7 @@ const Header = ({ payload }) => {
             </VerticalAlignDiv>
             <VerticalAlignDiv style={{ marginLeft: 'auto', marginRight:'3%'}}>
                 <Settings>
-                    <ReportTab />
+                    <Report />
                 </Settings>
             </VerticalAlignDiv>
         </StyledToolBar>

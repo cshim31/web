@@ -1,7 +1,7 @@
 import React from "react";
 import { MenuItem } from "@mui/material";
 
-const ReportTab = () => {
+const Report = () => {
     
     
     const onReportClick = () => {
@@ -17,4 +17,4 @@ const ReportTab = () => {
     );
 };
 
-export default ReportTab;
+export default Report;

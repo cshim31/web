@@ -141,8 +141,17 @@ const Experience = ({ payload }) => {
             <a href='https://gtri.gatech.edu/'>
                 <StyledIcon src={gtriImg} alt={'GTRI logo'} />
             </a>,
-            <HeaderTextBox strings={['Georgia Tech Research Institute', '05.2020 ~ 12.2021']} />,
-            <SummaryTextBox strings={['SMARTS TEN branch', 'Developed embedded system of NI instruments', 'Built web frontend components and constructed business DB', 'Tools: C/C++, Docker, CMake, Javascript, HTML/CSS, React, Django']} />,
+            <HeaderTextBox strings={[
+                payload.exp_corporation_gtri_header,
+                payload.exp_corporation_gtri_time_1,
+                payload.exp_corporation_gtri_time_2,
+            ]} />,
+            <SummaryTextBox strings={[
+                payload.exp_corporation_gtri_type,
+                payload.exp_corporation_gtri_description_1,
+                payload.exp_corporation_gtri_description_2,
+                payload.exp_corporation_gtri_tools,
+            ]} />,
         ),
     ];
 
@@ -151,8 +160,17 @@ const Experience = ({ payload }) => {
             <a href='https://play.google.com/store/apps/details?id=com.gttime.android'>
                 <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />
             </a>,
-            <HeaderTextBox strings={['GT Time', '01.2021 ~ 05.2021', '08.2021 ~ 12.2021']} />,
-            <SummaryTextBox strings={['Android Application', 'Developed mobile application to assist Georgia Tech student managing course schedules and looking up available courses in real time', 'Learned data crawling and built own course crawling application ', 'Tools: Java, Python, Github Actions']} />,
+            <HeaderTextBox strings={[
+                payload.exp_side_gttime_header,
+                payload.exp_side_gttime_time_1,
+                payload.exp_side_gttime_time_2,
+            ]} />,
+            <SummaryTextBox strings={[
+                payload.exp_side_gttime_type,
+                payload.exp_side_gttime_description_1,
+                payload.exp_side_gttime_description_2,
+                payload.exp_side_gttime_tools,
+            ]} />,
         ),
     ]
 
@@ -161,10 +179,10 @@ const Experience = ({ payload }) => {
         <StyledExperience>
             <div className='corporation-section'>
                 <div className='corporation-overview'>
-                    <h2> {'corporation project '} </h2>
+                    <h2> {payload.experience_corporation_header} </h2>
                 </div>
                 <div className='corporation-description'>
-                    <p> {'Followings are project that I successfully managed'} </p>
+                    <p> {payload.exp_description} </p>
                 </div>
                 <ListTable strings={corporationStrings} />
             </div>
@@ -173,10 +191,10 @@ const Experience = ({ payload }) => {
 
             <div className='side-section'>
                 <div className='side-overview'>
-                    <h2> {'side project '} </h2>
+                    <h2> {payload.experience_personal_header} </h2>
                 </div>
                 <div className='side-description'>
-                    <p> {'Followings are project that I successfully managed'} </p>
+                    <p> {payload.exp_description} </p>
                 </div>
                 <ListTable strings={sideStrings} />
             </div>
