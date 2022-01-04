@@ -7,7 +7,6 @@ import {
     TableCell,
     TableContainer,
     TableRow,
-    Paper
 }   from '@mui/material';
 
 import constants from '../constants';

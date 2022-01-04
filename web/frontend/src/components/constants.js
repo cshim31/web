@@ -1,13 +1,12 @@
 export default {
     defaultPrimaryColor: 'rgba(255, 255, 255, 0.8)', // header
-    defaultPrimaryColorSolid: 'rgba(255, 255, 255, 0.4)',
-    defaultSecondaryColor: 'rgba(230, 230, 230, 0.5)', // experience
-    defaultSecondaryColorSolid: 'rgba(0, 0, 0, 0.15)', // footer
+    defaultSecondaryColor: 'rgba(0, 0, 0, 0.15)', // footer
     defaultPrimaryTextColor: 'rgba(0, 0, 0, 0.87)',
     defaultPrimaryTextColorSolid: 'rgba(0, 0, 0, 0.3)',
     defaultSecondaryTextColor: 'rgba(255, 255, 255, 0.29)',
     defaultSecondaryTextColorSolid: 'rgba(255, 255, 255, 0.67)',
-    defaultPrimaryGradient: 'linear-gradient(#9198e5, #ffffff)',
+    defaultPrimarySurfaceColor: 'rgba(0, 0, 0, 0)',
+    defaultSecondarySurfaceColor: 'rgba(230, 230, 230, 0.5)',
     defaultPrimaryRefColor: 'rgba(15, 155, 246, 1)',
     fontStyleLarge: 'normal 30px sans-serif',
     fontStyleMedium: 'normal 24px sans-serif',

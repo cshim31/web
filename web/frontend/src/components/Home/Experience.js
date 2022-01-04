@@ -12,7 +12,7 @@ import corporationImg from '../../img/corporation.png';
 import individualImg from '../../img/developer.png';
 
 const StyledDiv = styled.div`
-    background-color: ${constants.defaultSecondaryColor} !important;
+    background-color: ${constants.defaultSecondarySurfaceColor} !important;
     display: flex;
     flex-direction: column;
     align-items: center;

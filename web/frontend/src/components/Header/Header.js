@@ -18,6 +18,7 @@ import constants from '../constants';
 import AppLogo from '../App/AppLogo';
 import Settings from '../Settings';
 import Report from '../SettingsGroup';
+import HeaderDrawer from './HeaderDrawer';
 
 const StyledToolBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
@@ -55,7 +56,18 @@ const TabContainer = styled.div`
   position: relative;
 `;
 
-const LogoGroup = () => {
+const LogoGroup = ({ payload }) => {
+
+    const [open, setOpen] = React.useState(false);
+
+    const onMenuClick = () => {
+        setOpen(true);
+    };
+
+    const toggleDrawer = () => {
+        setOpen(false);
+    };
+
     return (
         <VerticalAlignDiv>
             <IconWrapper>
@@ -68,11 +80,22 @@ const LogoGroup = () => {
                     <MenuIcon />
                 </IconButton>
             </IconWrapper>
+            <HeaderDrawer
+                anchor={payload.app_drawer_direction}
+                open={open}   
+                onClose={toggleDrawer}
+                payload={payload} 
+            />
             <LogoWrapper>
                 <AppLogo />
             </LogoWrapper>
         </VerticalAlignDiv>
     );
+};
+
+
+LogoGroup.propTypes = {
+    payload: PropTypes.object,
 };
 
 const IconWrapper = styled.div`
@@ -85,10 +108,6 @@ const LogoWrapper = styled.div`
     }
     margin-right: 16px;
 `;
-
-const onMenuClick = () => {
-
-};
 
 const LinkGroup = ({ LinkbarPages }) => {
     return (
@@ -167,7 +186,7 @@ const Header = ({ payload }) => {
     return(
         <StyledToolBar>
             <VerticalAlignDiv>
-                <LogoGroup />
+                <LogoGroup payload={payload}/>
                 <LinkGroup LinkbarPages={LinkbarPages}/>
             </VerticalAlignDiv>
             <VerticalAlignDiv>

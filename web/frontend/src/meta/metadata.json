@@ -1,6 +1,7 @@
 {
     "app_logo": "cshim",
     "app_description": "Open Source Website",
+    "app_drawer_direction": "left",
     "app_owner_name": "Chanhuyng Shim",
     "app_owner_header": "Hey, I'm Chanhuyung Shim",
     "app_owner_description": "I'm motivated software engineer to find optimized solution. I focus on logical reasoning for every architecture decision.",

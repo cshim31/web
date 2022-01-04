@@ -11,7 +11,7 @@ import Credit from './Credit';
 
 const StyledFooter = styled.footer`
     display: flex;
-    background-color: ${constants.defaultSecondaryColorSolid} !important;
+    background-color: ${constants.defaultSecondaryColor} !important;
     width: 100%;
     bottom: 0;
 
