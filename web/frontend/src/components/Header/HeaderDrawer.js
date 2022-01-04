@@ -21,19 +21,22 @@ const DrawerContent = styled.div`
     & a {
         color: ${constants.defaultPrimaryTextColor};
         text-decoration: none;
-        &:hover {
-            color: ${constants.defaultPrimaryTextColor};
-            opacity: 0.6;
-        }
     }
 `;
 
 const DrawerLink = styled(Link)`
-
+    width: 100%;
 `;
 
 const StyledNav = styled.a`
+    width: 100%;
+`;
 
+const StyledListItem = styled(ListItem)`
+    &:hover {
+        background: ${constants.defaultSecondaryColor};
+        transition: ${constants.defaultTransition};
+    }
 `;
 
 const HeaderDrawer = (props) => {
@@ -72,20 +75,20 @@ const HeaderDrawer = (props) => {
             {
                 items.map((anchor) => (
                     <DrawerLink to={anchor.to} key={anchor.key}>
-                        <ListItem>
+                        <StyledListItem>
                             <ListItemText primary={anchor.text} /> 
-                        </ListItem>
+                        </StyledListItem>
                     </DrawerLink>
                 ))
             }
 
             {
                 props.payload? (
-                    <ListItem>
+                    <StyledListItem>
                         <StyledNav href={props.payload.app_github_link}>
                             <ListItemText primary={props.payload.app_github_label} /> 
                         </StyledNav>
-                    </ListItem>
+                    </StyledListItem>
                 ) : (
                     <div />
                 )
