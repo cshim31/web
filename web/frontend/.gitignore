@@ -6,7 +6,7 @@
 .pnp.js
 
 # resource
-**/img
+# **/img
 
 # testing
 /coverage
