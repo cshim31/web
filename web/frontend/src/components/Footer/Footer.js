@@ -10,9 +10,9 @@ import Description from './Description';
 import Credit from './Credit';
 
 const StyledFooter = styled.footer`
-    display: flex;
     background-color: ${constants.defaultSecondaryColor} !important;
     width: 100%;
+    left: 0;
     bottom: 0;
 
     & a {
@@ -26,8 +26,6 @@ const StyledFooter = styled.footer`
 
 const StyledDiv = styled.div`
     margin: 45px 16px 30px 50px; 
-    display: flex;
-    flex-direction: column;
 `;
 
 const VerticalAlignDiv = styled.div`
@@ -46,12 +44,8 @@ const Footer = () => {
                         <SocialGroup />
                     </VerticalAlignDiv>
                 </Router>
-                <VerticalAlignDiv>
-                    <Description />
-                </VerticalAlignDiv>
-                <VerticalAlignDiv>
-                    <Credit />
-                </VerticalAlignDiv>
+                <Description />
+                <Credit />
             </StyledDiv>
         </StyledFooter>
     );

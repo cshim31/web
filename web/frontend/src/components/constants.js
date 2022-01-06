@@ -25,4 +25,5 @@ export default {
     containerHeightMedium: '1200px',
     defaultHeaderHeight: '56px',
     defaultTransition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
+    defaultAppWidth: '1280px',
 };

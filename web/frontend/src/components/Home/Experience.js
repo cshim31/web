@@ -13,12 +13,9 @@ import individualImg from '../../img/developer.png';
 
 const StyledDiv = styled.div`
     background-color: ${constants.defaultSecondarySurfaceColor} !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     width: 70%;
-    margin: 0 0 100px 0;
+    margin: 0 auto 100px auto;
 `;
 
 
@@ -26,7 +23,7 @@ const StyledTopic = styled.div`
     font-size: ${constants.fontSizeLarge};
     font-style: normal;
     font-weight: ${constants.fontWeightMedium};
-    margin: 60px 0 0 0;
+    padding: 60px 0 0 0;
 `;
 
 const Topic = ({ string }) => {
