@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import constants from '../constants';
-import Banner from "../Banner";
+import Banner from "./Banner";
 import Skill from './Skill';
 import Experience from './Experience';
 

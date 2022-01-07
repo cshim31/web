@@ -9,12 +9,6 @@ import constants from '../constants';
 const BannerDiv = styled.div`
     width: 100%;
     background-color: #D5F7E6;
-    
-    & img {
-        max-width: 100%;
-        min-height: 100px;
-        max-height: 500px;
-    }
 
     & a {
         color: ${constants.defaultPrimaryTextColorSolid};
@@ -31,9 +25,21 @@ const ContentDiv = styled.div`
     flex-direction: row; 
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        padding-top: 75px;
+    }
 `;
 
 const ImageWrapper = styled.img`
+    min-height: 100px;
+    max-height: 500px;
+    max-width: 500px;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        max-width: 250px;
+        max-height: 250px;
+    }
 `;
 
 const TextWrapper = styled.div`
@@ -42,7 +48,7 @@ const TextWrapper = styled.div`
     max-width: 31%;
     
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
-        max-width: 31%;
+        max-width: 15%;
     }
 `;
 

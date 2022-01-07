@@ -10,8 +10,12 @@ import constants from '../constants';
 const StyledDiv = styled.div`
     text-align: center;
     background: inherit;
-    width: 50%;
     margin: 100px auto 50px auto;
+    width: ${constants.defaultAppWidth};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        width: 100%;
+    }
 `;
 
 const StyledTopic = styled.div`
@@ -35,30 +39,30 @@ Topic.propTypes = {
 
 const SkillContainer = styled.div`
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    margin: 80px 20px 160px 0;
+    align-items: center;
+    margin: 80px 0 160px 0;
 
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
         flex-direction: column;
+        max-width: 100%;
     }
 `;
 
 const StyledContainer = styled.div`
     padding: 30px 0 0 0;
-    align-items: center;
     max-width: 28%;
 `;
 
 const IconWrapper = styled.div`
-    margin: 0 0 50px 0;
+    padding: 0 0 50px 0;
     align-items: center;
 `;
 
 const StyledHeader = styled.div`
     font: ${constants.fontStyleMedium};
 
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
         font-size: ${constants.fontSizeSemi};
     }
 `;
@@ -66,7 +70,7 @@ const StyledHeader = styled.div`
 const StyledDescription = styled.p`
     font: ${constants.fontStyleSmall};
 
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
         font-size: ${constants.fontSizeSmall};
     }
 `;
