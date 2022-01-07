@@ -14,7 +14,10 @@ import Introduction from '../Introduction';
 import Experience from '../Experience';
 
 const StyledDiv = styled.div`
-    
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
     & a {
       text-decoration: none;
       &:hover {
@@ -29,11 +32,11 @@ function App() {
       <Normalize />
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/intro' element={<Introduction />} />
-          <Route path='/exp' element={<Experience />} />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/intro' element={<Introduction />} />
+            <Route path='/exp' element={<Experience />} />
+          </Routes>
       </BrowserRouter>
       <Footer />
   </StyledDiv>

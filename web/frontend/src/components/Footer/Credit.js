@@ -1,17 +1,25 @@
 import styled from '@emotion/styled';
 
+import constants from '../constants';
+
 const CreditDiv = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 7px 0 0 0;
+    justify-content: initial;
+    padding: 7px 0 0 0;
 
-    & a {
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        max-width: 10%;
     }
+    
 `;
 
 const LinkWrapper = styled.div`
     margin-right: 7px;
+    font: ${constants.fontStyleSemi};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeMini};
+    }
 `;
 
 const Credit = () => {

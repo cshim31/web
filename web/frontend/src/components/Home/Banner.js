@@ -7,18 +7,8 @@ import bannerImg from '../../img/developer_wide.png';
 import constants from '../constants';
 
 const BannerDiv = styled.div`
-    display: flex;
-    flex-direction: row; 
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background-color: #D5F7E6;
-    
-    & img {
-        max-width: 100%;
-        min-height: 100px;
-        max-height: 500px;
-    }
 
     & a {
         color: ${constants.defaultPrimaryTextColorSolid};
@@ -30,44 +20,68 @@ const BannerDiv = styled.div`
     }
 `;
 
-const ImageWrapper = styled.div`
+const ContentDiv = styled.div`
     display: flex;
-    flex-direction: column; 
+    flex-direction: row; 
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        padding-top: 75px;
+    }
+`;
+
+const ImageWrapper = styled.img`
+    min-height: 100px;
+    max-height: 500px;
+    max-width: 500px;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        max-width: 250px;
+        max-height: 250px;
+    }
 `;
 
 const TextWrapper = styled.div`
-    align-items: center;
-    justify-content: center;
     font-size: ${constants.fontSizeMedium};
     color: ${constants.defaultPrimaryTextColor};
-    margin: 0 100px 0 0;
     max-width: 31%;
+    
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        max-width: 15%;
+    }
 `;
 
 const StyledHeader = styled.div`
     font: ${constants.fontStyleLarge};
     font-weight: bold;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeMedium};
+    }
 `;
 
 const StyledDescription = styled.p`
     font: ${constants.fontStyleMedium};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeSemi};
+    }
 `;
 
 const Banner = ({ payload }) => {
     return (
         <BannerDiv>
-            <TextWrapper>
-                <StyledHeader> {payload.app_owner_header} </StyledHeader>
-                <StyledDescription> {payload.app_owner_description} </StyledDescription>
-            </TextWrapper>
-            <ImageWrapper>
-                <img
+            <ContentDiv>
+                <TextWrapper>
+                    <StyledHeader> {payload.app_owner_header} </StyledHeader>
+                    <StyledDescription> {payload.app_owner_description} </StyledDescription>
+                </TextWrapper>
+                <ImageWrapper
                     src= {bannerImg}
                     alt='Website creator concept illustration'
                 />
-            </ImageWrapper>
+            </ContentDiv>
         </BannerDiv>
 
     );

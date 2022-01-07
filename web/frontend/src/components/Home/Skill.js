@@ -8,13 +8,14 @@ import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import constants from '../constants';
 
 const StyledDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     background: inherit;
-    width: 50%;
-    margin: 100px 0 50px 0;
+    margin: 100px auto 50px auto;
+    width: ${constants.defaultAppWidth};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        width: 100%;
+    }
 `;
 
 const StyledTopic = styled.div`
@@ -34,7 +35,45 @@ const Topic = ({ string }) => {
 
 Topic.propTypes = {
     string: PropTypes.string,
-}
+};
+
+const SkillContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 80px 0 160px 0;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        flex-direction: column;
+        max-width: 100%;
+    }
+`;
+
+const StyledContainer = styled.div`
+    padding: 30px 0 0 0;
+    max-width: 28%;
+`;
+
+const IconWrapper = styled.div`
+    padding: 0 0 50px 0;
+    align-items: center;
+`;
+
+const StyledHeader = styled.div`
+    font: ${constants.fontStyleMedium};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeSemi};
+    }
+`;
+
+const StyledDescription = styled.p`
+    font: ${constants.fontStyleSmall};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeSmall};
+    }
+`;
 
 const SkillGroup = ({ payload }) => {
     return (
@@ -78,33 +117,7 @@ const SkillGroup = ({ payload }) => {
 
 SkillGroup.propTypes = {
     payload: PropTypes.object,
-}
-
-const SkillContainer = styled.div`
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    margin: 80px 20px 160px 0;
-`;
-
-const StyledContainer = styled.div`
-    align-items: center;
-    max-width: 28%;
-`;
-
-const IconWrapper = styled.div`
-    margin: 0 0 50px 0;
-    align-items: center;
-`;
-
-const StyledHeader = styled.div`
-    font: ${constants.fontStyleMedium};
-`;
-
-const StyledDescription = styled.p`
-    font: ${constants.fontStyleSmall};
-`;
+};
 
 
 const Skill = ({ payload }) => {

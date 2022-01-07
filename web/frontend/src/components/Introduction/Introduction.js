@@ -1,46 +1,75 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 import constants from '../constants';
 import Skill from './Skill';
-import HyperLink from '../Link';
 import expImg from '../../img/experience.png';
 
 const IntroductionContainer = styled.div`
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
     min-height: ${constants.containerHeightMedium};
     height: auto;
+    margin: 80px 0 0 0;
 `;
 
-const HorizontalAlignDiv = styled.div`
+const VerticalAlignDiv = styled.div`
     display: flex;
-    flex-directions: column;
     justify-content: center;
-`;
 
-
-const StyledTextDiv = styled.div`
-    max-width: 60%;
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
 `;
 
 const StyledHeader = styled.h3`
     font-size: ${constants.fontSizeLarge};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeMedium};
+    }
 `;
 
 const StyledDescription = styled.p`
     padding: 17px 0 0 0;
-    font-size: ${constants.fontSizeSmall};
+    font-size: ${constants.fontSizeMedium};
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        font-size: ${constants.fontSizeSmall};
+    }
 `;
 
 const ImageWrapper = styled.img`
     margin: 0 0 0 50px;
+    max-width: 450px;
+    height: auto;
+    width: auto;
 `;
 
 const PaddedDiv = styled.div`
     padding: 100px 0 0 0;
+`;
+
+const HyperLink = (props) => {
+    return (
+        <StyledLink {...props}>
+            {props.children}
+        </StyledLink>
+    );
+};
+
+const StyledLink = styled(Link)`
+    font-weight: ${constants.fontWeightMedium};
+    font-size: ${constants.fontSizeSmall};
+    color: ${constants.defaultPrimaryRefColor};
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+        color: ${constants.defaultPrimaryRefColor};
+        opacity: 0.8;
+    }
 `;
 
 const DetailedLink = (props) => {
@@ -62,31 +91,29 @@ const Introduction = ({ payload }) => {
 
     return (
         <IntroductionContainer>
-            <HorizontalAlignDiv>
-            <StyledTextDiv style={{maxWidth: '62%'}}>
-                <StyledHeader> {payload.intro_developer_header} </StyledHeader>
-                <StyledDescription> {payload.intro_developer_description} </StyledDescription>
-            </StyledTextDiv>
-            </HorizontalAlignDiv>
-            <PaddedDiv>
-                <HorizontalAlignDiv>
-                    <Skill/>
-                    <StyledTextDiv style={{maxWidth: '30%'}}>
-                        <StyledHeader> {payload.intro_skill_header} </StyledHeader>
-                        <StyledDescription> {payload.intro_skill_description} </StyledDescription>
-                    </StyledTextDiv>
-                </HorizontalAlignDiv>
-            </PaddedDiv>
-            <PaddedDiv>
-                <HorizontalAlignDiv>
-                    <StyledTextDiv style={{maxWidth: '36%'}}>
-                        <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
-                        <StyledDescription> {payload.intro_work_experience_description} </StyledDescription>
-                        <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
-                    </StyledTextDiv>
-                    <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
-                </HorizontalAlignDiv>
-            </PaddedDiv>
+            <VerticalAlignDiv>
+                <div style={{maxWidth: '62%'}}>
+                    <StyledHeader> {payload.intro_developer_header} </StyledHeader>
+                    <StyledDescription> {payload.intro_developer_description} </StyledDescription>
+                </div>
+            </VerticalAlignDiv>
+            <PaddedDiv />
+            <VerticalAlignDiv>
+                <Skill/>
+                <div style={{maxWidth: '30%'}}>
+                    <StyledHeader> {payload.intro_skill_header} </StyledHeader>
+                    <StyledDescription> {payload.intro_skill_description} </StyledDescription>
+                </div>
+            </VerticalAlignDiv>
+            <PaddedDiv />
+            <VerticalAlignDiv>
+                <div style={{maxWidth: '36%'}}>
+                    <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
+                    <StyledDescription> {payload.intro_work_experience_description} </StyledDescription>
+                    <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
+                </div>
+                <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
+            </VerticalAlignDiv>
         </IntroductionContainer>
     );
 };

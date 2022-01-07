@@ -20,7 +20,7 @@ const StyledExperience = styled.div`
 
     .corporation-section {
         display: block;
-        margin-left: 250px;
+        margin-left: 10%;
     }
 
     .corporation-overview {
@@ -29,12 +29,16 @@ const StyledExperience = styled.div`
 
     .side-section {
         display: block;
-        margin-left: 250px;
+        margin-left: 10%;
         margin-top: 50px;
     }
 
     .side-overview {
         text-transform: uppercase;
+    }
+
+    @media only screen and (max-width: 1200px) { 
+        overflow-x: hidden !important;
     }
 `;
 
@@ -93,7 +97,7 @@ const SummaryTextBox = ({ strings }) => {
 const ListTable = ({ strings }) => {
     return (
         <TableContainer>
-            <Table aria-label="list table">
+            <Table style={{ tableLayout: "auto" }} aria-label="list table">
                 <TableBody>
                     {
                         strings.map((row) => (

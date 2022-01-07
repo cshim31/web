@@ -24,10 +24,10 @@ const StyledToolBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
     background-color: ${constants.defaultPrimaryColor} !important;
     height: ${constants.defaultHeaderHeight};
+    top: 0;
     left: 0;
     padding: 0px 16px !important;
     position: fixed;
-    top: 0;
     width: 100%;
     z-index: ${constants.priorStackOrder};
     & a {
@@ -103,7 +103,7 @@ const IconWrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: ${constants.defaultAppWidth}) {
         display: none;
     }
     margin-right: 16px;
@@ -145,7 +145,7 @@ NavigationLink.propTypes = {
 };
 
 const LinkWrapper = styled.div`
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: ${constants.defaultAppWidth}) {
         display: none;
     }
     margin-right: 16dp;
