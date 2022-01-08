@@ -61,6 +61,7 @@ const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 30px;
 `;
 
 const Image = (props) => {

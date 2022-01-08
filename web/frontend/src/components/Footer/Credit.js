@@ -15,7 +15,8 @@ const CreditDiv = styled.div`
 
 const LinkWrapper = styled.div`
     margin-right: 7px;
-    font: ${constants.fontStyleSemi};
+    font-weight: ${constants.fontWeightSmall};
+    font-size: ${constants.fontSizeMini};
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
         font-size: ${constants.fontSizeMini};
