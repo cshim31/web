@@ -1,26 +1,17 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableRow,
-}   from '@mui/material';
 
 import constants from '../constants';
 import gtriImg from '../../img/gtri.png';
 import gtTimeImg from '../../img/gtTime.png';
 
 const StyledExperience = styled.div`
-    margin-top: 150px;
+    margin: auto;
+    padding: 150px 25px 25px 25px;
     min-height: ${constants.containerHeightMedium};
-    height: auto;
 
     .corporation-section {
-        display: block;
-        margin-left: 10%;
     }
 
     .corporation-overview {
@@ -28,20 +19,13 @@ const StyledExperience = styled.div`
     }
 
     .side-section {
-        display: block;
-        margin-left: 10%;
         margin-top: 50px;
     }
 
     .side-overview {
         text-transform: uppercase;
     }
-
-    @media only screen and (max-width: 1200px) { 
-        overflow-x: hidden !important;
-    }
 `;
-
 
 const StyledIcon = styled.img`
     width: 100px
@@ -94,32 +78,64 @@ const SummaryTextBox = ({ strings }) => {
     );
 };
 
+const InnerTableContainer = styled.div`
+    overflow-x: hidden !important;
+    text-overflow: ellipsis !important;
+    width: 100%;
+`;
+
+const StyledTable = styled.table`
+    table-layout: auto;
+
+    & th,
+    & tr,
+    & td {
+        border-style:hidden;
+    }
+`;
+
+const StyledTableBody = styled.tbody`
+
+`;
+
+const StyledTableRow = styled.tr`
+
+`;
+
+const ImageTableCell = styled.td`
+    width: 100px;
+`;
+
+const ScaledTableCell = styled.td`
+    padding-right: 20px !important;
+`;
+
 const ListTable = ({ strings }) => {
     return (
-        <TableContainer>
-            <Table style={{ tableLayout: "auto" }} aria-label="list table">
-                <TableBody>
+        <InnerTableContainer>
+            <StyledTable aria-label="list table">
+                <StyledTableBody>
                     {
                         strings.map((row) => (
-                            <TableRow
+                            <StyledTableRow
                             key={row.img}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
                             >
-                            <TableCell component="th" scope="row" sx={{ 'width': 100}}>
+                            <ImageTableCell>
                                 {row.img}
-                            </TableCell>
-                            <TableCell align="left">
+                            </ImageTableCell>
+                            <ScaledTableCell>
                                 {row.desc}
-                            </TableCell>
-                            <TableCell align="left">
+                            </ScaledTableCell>
+                            <ScaledTableCell>
                                 {row.role}
-                            </TableCell>
-                            </TableRow>
+                            </ScaledTableCell>
+                            </StyledTableRow>
                         ))
                     }
-                </TableBody>
-            </Table>
-        </TableContainer>
+                </StyledTableBody>
+            </StyledTable>
+        </InnerTableContainer>
     );
 };
 
