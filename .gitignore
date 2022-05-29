@@ -4,6 +4,7 @@
 
 # virtual environments
 /virtualenvs
+/virtualenvs/pyenv.cfg
 
 # dependencies
 /node_modules
