@@ -1,4 +1,4 @@
-![app-logo](res\logo.png)
+![app-logo](res/logo.png)
 
 # Welcome to GT-Time, Georgia Tech schedule builder repo
 
