@@ -6,7 +6,7 @@ import constants from '../constants';
 import gtriImg from '../../img/gtri.png';
 import gtTimeImg from '../../img/gtTime.png';
 
-const StyledExperience = styled.div`
+const ExperienceMain = styled.main`
     margin: auto;
     padding: 150px 25px 25px 25px;
     min-height: ${constants.containerHeightMedium};
@@ -26,6 +26,10 @@ const StyledExperience = styled.div`
         text-transform: uppercase;
     }
 `;
+
+const StyledArticle = styled.article`
+
+`
 
 const StyledIcon = styled.img`
     width: 100px
@@ -113,28 +117,30 @@ const ScaledTableCell = styled.td`
 const ListTable = ({ strings }) => {
     return (
         <InnerTableContainer>
-            <StyledTable aria-label="list table">
-                <StyledTableBody>
-                    {
-                        strings.map((row) => (
-                            <StyledTableRow
-                            key={row.img}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
-                            >
-                            <ImageTableCell>
-                                {row.img}
-                            </ImageTableCell>
-                            <ScaledTableCell>
-                                {row.desc}
-                            </ScaledTableCell>
-                            <ScaledTableCell>
-                                {row.role}
-                            </ScaledTableCell>
-                            </StyledTableRow>
-                        ))
-                    }
-                </StyledTableBody>
-            </StyledTable>
+            <StyledArticle>
+                <StyledTable aria-label="list table">
+                    <StyledTableBody>
+                        {
+                            strings.map((row) => (
+                                <StyledTableRow
+                                key={row.img}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
+                                >
+                                <ImageTableCell>
+                                    {row.img}
+                                </ImageTableCell>
+                                <ScaledTableCell>
+                                    {row.desc}
+                                </ScaledTableCell>
+                                <ScaledTableCell>
+                                    {row.role}
+                                </ScaledTableCell>
+                                </StyledTableRow>
+                            ))
+                        }
+                    </StyledTableBody>
+                </StyledTable>
+            </StyledArticle>
         </InnerTableContainer>
     );
 };
@@ -195,7 +201,7 @@ const Experience = ({ payload }) => {
 
 
     return (
-        <StyledExperience>
+        <ExperienceMain>
             <div className='corporation-section'>
                 <div className='corporation-overview'>
                     <h2> {payload.experience_corporation_header} </h2>
@@ -217,7 +223,7 @@ const Experience = ({ payload }) => {
                 </div>
                 <ListTable strings={sideStrings} />
             </div>
-        </StyledExperience>
+        </ExperienceMain>
     );
 };
 

@@ -2,6 +2,8 @@ import React from 'react';
 import {
     Toolbar,
     IconButton,
+    List,
+    ListItem,
 } from '@mui/material';
 import { 
     BrowserRouter as Router,
@@ -18,7 +20,11 @@ import constants from '../constants';
 import AppLogo from '../App/AppLogo';
 import Settings from '../Settings';
 import Report from '../SettingsGroup';
-import HeaderDrawer from './HeaderDrawer';
+import {
+    RouteDrawerItem,
+     NavDrawerItem, 
+     CustomDrawer
+} from '../Drawer/Drawer';
 
 const StyledToolBar = styled(Toolbar)`
     backdrop-filter: blur(16px);
@@ -33,7 +39,6 @@ const StyledToolBar = styled(Toolbar)`
     & a {
     color: ${constants.defaultPrimaryTextColor};
     &:hover {
-        color: ${constants.defaultPrimaryTextColor};
         opacity: 0.6;
         }
     }
@@ -42,7 +47,6 @@ const StyledToolBar = styled(Toolbar)`
 const VerticalAlignDiv = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
 `;
 
 const TabContainer = styled.div`
@@ -68,6 +72,43 @@ const LogoGroup = ({ payload }) => {
         setOpen(false);
     };
 
+    const items = [
+            {
+                to:{
+                    pathname: payload.route_intro_link
+                },
+                text: payload.route_intro_text,
+            },
+        
+            {
+                to:{
+                    pathname: payload.route_exp_link
+                },
+                text: payload.route_exp_text,
+            },
+    ];
+
+
+    const content = () => (
+        <List>
+            <ListItem sx={{'justifyContent': 'center'}}>
+                <AppLogo string={payload.app_logo} />
+            </ListItem>
+
+            {
+                items.map((anchor) => (
+                    <RouteDrawerItem key={anchor.text} to={anchor.to} text={anchor.text}/>
+                ))
+            }
+
+            <NavDrawerItem 
+                to={payload.app_github_link}
+                text={payload.app_github_label}
+            />
+
+        </List>
+    );
+
     return (
         <VerticalAlignDiv>
             <IconWrapper>
@@ -80,11 +121,11 @@ const LogoGroup = ({ payload }) => {
                     <MenuIcon />
                 </IconButton>
             </IconWrapper>
-            <HeaderDrawer
+            <CustomDrawer
                 anchor={payload.app_drawer_direction}
                 open={open}   
                 onClose={toggleDrawer}
-                payload={payload} 
+                content={content}
             />
             <LogoWrapper>
                 <AppLogo />
