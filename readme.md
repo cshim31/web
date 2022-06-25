@@ -13,14 +13,15 @@ This repository contains the source code for:
 ## Installation
 
 Create and activate virtual environment\
-`python -m venv .virtualenvs && .venv\scripts\activate.bat`
+`python -m venv .virtualenvs && .virtualenvs\scripts\activate.bat`
 
 Install the packages\
-`pip install -r requirements.txt`
+`pip install -r requirements.txt && nodeenv -p`
 
 Navigate to frontend directory and Install the npm packages\
 `cd web/frontend && npm install`
 
+Refer to readme in frontend directory for commands
 
 ## Design
 

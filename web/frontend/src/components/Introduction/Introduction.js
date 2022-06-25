@@ -7,12 +7,13 @@ import constants from '../constants';
 import Skill from './Skill';
 import expImg from '../../img/experience.png';
 
-const IntroductionContainer = styled.div`
+const IntroductionMain = styled.main`
     min-height: ${constants.containerHeightMedium};
     height: auto;
     margin: 80px 0 0 0;
 `;
 
+/* TODO: Replace with article tag */
 const VerticalAlignDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -90,7 +91,7 @@ const CenterDiv = styled.div`
 const Introduction = ({ payload }) => {
 
     return (
-        <IntroductionContainer>
+        <IntroductionMain>
             <VerticalAlignDiv>
                 <div style={{maxWidth: '62%'}}>
                     <StyledHeader> {payload.intro_developer_header} </StyledHeader>
@@ -114,7 +115,7 @@ const Introduction = ({ payload }) => {
                 </div>
                 <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
             </VerticalAlignDiv>
-        </IntroductionContainer>
+        </IntroductionMain>
     );
 };
 

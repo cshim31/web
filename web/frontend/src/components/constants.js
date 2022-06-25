@@ -1,6 +1,6 @@
 export default {
-    defaultPrimaryColor: 'rgba(255, 255, 255, 0.8)', // header
-    defaultSecondaryColor: 'rgba(0, 0, 0, 0.15)', // footer
+    defaultPrimaryColor: 'rgba(255, 255, 255, 0.8)', 
+    defaultSecondaryColor: 'rgba(0, 0, 0, 0.15)', 
     defaultPrimaryTextColor: 'rgba(0, 0, 0, 0.87)',
     defaultPrimaryTextColorSolid: 'rgba(0, 0, 0, 0.3)',
     defaultSecondaryTextColor: 'rgba(255, 255, 255, 0.29)',
@@ -8,6 +8,10 @@ export default {
     defaultPrimarySurfaceColor: 'rgba(0, 0, 0, 0)',
     defaultSecondarySurfaceColor: 'rgba(230, 230, 230, 0.5)',
     defaultPrimaryRefColor: 'rgba(15, 155, 246, 1)',
+    defaultHeaderHeight: '56px',
+    defaultTransition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
+    defaultAppWidth: '980px',
+    defaultHoverTransparency: '0.6',
     fontStyleLarge: 'normal 30px sans-serif',
     fontStyleMedium: 'normal 24px sans-serif',
     fontStyleSemi: 'normal 20px sans-serif',
@@ -21,9 +25,7 @@ export default {
     fontSizeSmall: '17px',
     fontSizeMini: '12px',
     inlineSizeMedium: '600px',
-    priorStackOrder: '50',
+    priorStackOrder: '100',
     containerHeightMedium: '1200px',
-    defaultHeaderHeight: '56px',
-    defaultTransition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
-    defaultAppWidth: '780px',
+    
 };

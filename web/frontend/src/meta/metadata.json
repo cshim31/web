@@ -3,8 +3,8 @@
     "app_description": "Open Source Website",
     "app_drawer_direction": "left",
     "app_owner_name": "Chanhuyng Shim",
-    "app_owner_header": "Hey, I'm Chanhuyung Shim",
-    "app_owner_description": "I'm motivated software engineer to find optimized solution. I focus on logical reasoning for every architecture decision.",
+    "app_owner_header": "Hey, I'm Chanhuyung",
+    "app_owner_description": "I'm eager to learn and familiarize with programming and design. I focus on why such design and approach were made.",
     "app_github_link": "https://github.com/cshim31/web",
     "app_github_label": "GitHub",
     "app_linkedin_link": "https://www.linkedin.com/in/chanhuyng-shim-998456196/",
@@ -48,5 +48,9 @@
     "exp_side_gttime_description_1": "Developed mobile application to assist Georgia Tech student managing course schedules and looking up available courses in real time",
     "exp_side_gttime_time_2": "08.2021 ~ 12.2021",
     "exp_side_gttime_description_2": "Learned data crawling and built own course crawling application",
-    "exp_side_gttime_tools": "Tools: Java, Python, SQL, AWS, Github Actions"
+    "exp_side_gttime_tools": "Tools: Java, Python, SQL, AWS, Github Actions",
+    "route_intro_link": "/intro",
+    "route_intro_text": "Introduction",
+    "route_exp_link": "/exp",
+    "route_exp_text": "Experience"
 }

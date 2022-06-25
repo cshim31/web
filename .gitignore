@@ -3,6 +3,8 @@
 /Lib
 
 # virtual environments
+/?virtualenvs
+/virtualenvs?
 /virtualenvs
 /virtualenvs/pyenv.cfg
 
