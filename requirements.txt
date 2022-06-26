@@ -2,6 +2,6 @@ asgiref==3.4.1
 Django==4.0
 nodeenv==1.6.0
 nodejs==0.1.1
-optional-django==0.1.0
+optional-django==0.3.0
 sqlparse==0.4.2
 tzdata==2021.5
