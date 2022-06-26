@@ -11,7 +11,7 @@ import corporationImg from '../../img/corporation.png';
 import individualImg from '../../img/developer.png';
 
 const StyledDiv = styled.div`
-    background-color: ${constants.defaultSecondarySurfaceColor} !important;
+    background-color: transparent;
     text-align: center;
     width: 70%;
     margin: 0 auto 100px auto;
@@ -46,9 +46,10 @@ const ExperienceContainer = styled.div`
     }
 `;
 
-const StyledCard = styled(Card)`
+const StyledCard = styled.div`
     max-width: 35%;
-    margin: 80px 30px 30px 0;
+    margin: 40px 30px 30px 0;
+    background-color: transparent !important;
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
         margin-left: 30px;
