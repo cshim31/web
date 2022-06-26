@@ -9,14 +9,8 @@ import expImg from '../../img/experience.png';
 
 const IntroductionMain = styled.main`
     min-height: ${constants.containerHeightMedium};
-    height: auto;
-    margin: 80px 0 0 0;
-`;
-
-/* TODO: Replace with article tag */
-const VerticalAlignDiv = styled.div`
-    display: flex;
-    justify-content: center;
+    margin: 50px auto 0px auto;
+    padding: 20px;
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
         flex-direction: column;
@@ -25,21 +19,16 @@ const VerticalAlignDiv = styled.div`
     }
 `;
 
-const StyledHeader = styled.h3`
-    font-size: ${constants.fontSizeLarge};
+const StyledArticle = styled.article`
+    margin: 30px 0 30px 0;
+    padding: 20px;
+`
 
-    @media only screen and (max-width: ${constants.defaultAppWidth}) {
-        font-size: ${constants.fontSizeMedium};
-    }
+
+const StyledHeader = styled.h4`
 `;
 
 const StyledDescription = styled.p`
-    padding: 17px 0 0 0;
-    font-size: ${constants.fontSizeMedium};
-
-    @media only screen and (max-width: ${constants.defaultAppWidth}) {
-        font-size: ${constants.fontSizeSmall};
-    }
 `;
 
 const ImageWrapper = styled.img`
@@ -92,29 +81,25 @@ const Introduction = ({ payload }) => {
 
     return (
         <IntroductionMain>
-            <VerticalAlignDiv>
-                <div style={{maxWidth: '62%'}}>
-                    <StyledHeader> {payload.intro_developer_header} </StyledHeader>
-                    <StyledDescription> {payload.intro_developer_description} </StyledDescription>
-                </div>
-            </VerticalAlignDiv>
-            <PaddedDiv />
-            <VerticalAlignDiv>
-                <Skill/>
-                <div style={{maxWidth: '30%'}}>
-                    <StyledHeader> {payload.intro_skill_header} </StyledHeader>
-                    <StyledDescription> {payload.intro_skill_description} </StyledDescription>
-                </div>
-            </VerticalAlignDiv>
-            <PaddedDiv />
-            <VerticalAlignDiv>
-                <div style={{maxWidth: '36%'}}>
-                    <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
-                    <StyledDescription> {payload.intro_work_experience_description} </StyledDescription>
-                    <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
-                </div>
-                <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
-            </VerticalAlignDiv>
+            <StyledArticle>
+                <StyledHeader> {payload.intro_developer_header} </StyledHeader>
+                <StyledDescription> {payload.intro_developer_description1} </StyledDescription>
+                <StyledDescription> {payload.intro_developer_description2} </StyledDescription>
+            </StyledArticle>
+            <Skill/>
+            <StyledArticle>
+                <StyledHeader> {payload.intro_skill_header} </StyledHeader>
+                <StyledDescription> {payload.intro_skill_description1} </StyledDescription>
+                <StyledDescription> {payload.intro_skill_description2} </StyledDescription>
+            </StyledArticle>
+            <StyledArticle>
+                <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
+                <StyledDescription> {payload.intro_work_experience_description1} </StyledDescription>
+                <StyledDescription> {payload.intro_work_experience_description2} </StyledDescription>
+            </StyledArticle>
+            
+            <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
+            <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
         </IntroductionMain>
     );
 };
