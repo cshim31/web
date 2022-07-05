@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import constants from '../constants';
 
 const BannerDiv = styled.div`
-    background-color: #D5F7E6;
+    background-color: ${constants.defaultBackgroundColor};
 
     display: flex;
     flex-wrap: wrap;

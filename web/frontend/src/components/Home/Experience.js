@@ -52,8 +52,7 @@ const StyledCard = styled.div`
     background-color: transparent !important;
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
-        margin-left: 30px;
-        margin-right: 30px;
+        margin: 0px 30px 0px 30px;
         max-width: 100%;
     }
 `;
@@ -63,6 +62,10 @@ const StyledContent = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 30px;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        margin: 0px;
+    }
 `;
 
 const Image = (props) => {

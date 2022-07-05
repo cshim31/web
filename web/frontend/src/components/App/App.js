@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Normalize from './Normalize';
+import ScrollToTop from './ScrollToTop';
 import constants from '../constants';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -31,6 +32,7 @@ function App() {
     <StyledDiv>
       <Normalize />
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
           <Routes>
             <Route path='/' element={<Home />} />
