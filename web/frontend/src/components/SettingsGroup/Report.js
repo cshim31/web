@@ -1,20 +1,26 @@
 import React from "react";
 import { MenuItem } from "@mui/material";
+import { connect } from 'react-redux';
+import BugReportIcon from '@mui/icons-material/BugReport';
 
-const Report = () => {
+const Report = ({ payload }) => {
     
     
     const onReportClick = () => {
-        console.log('reported');
+        window.location.href = payload.route_report;
     };
 
     return(
         <MenuItem
             onClick={onReportClick}
         >
-            Report
+            Report Bug
         </MenuItem>
     );
 };
 
-export default Report;
+const mapStateToProps = (state) => ({
+    payload: state.metadata.payload,    
+});
+
+export default connect(mapStateToProps)(Report);

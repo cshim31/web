@@ -148,6 +148,9 @@ const Introduction = ({ payload }) => {
                 <SkillStack />
             </StyledArticle>
             
+            {
+                // change it to different icons in row
+            /*
             <StyledArticle>
                 <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
                 <StyledDescription> {payload.intro_work_experience_description1} </StyledDescription>
@@ -156,7 +159,8 @@ const Introduction = ({ payload }) => {
             
             <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
             <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
-            
+            */
+            }
         </IntroductionMain>
     );
 };

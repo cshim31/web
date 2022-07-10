@@ -212,8 +212,6 @@ const Experience = ({ payload }) => {
                 <ListTable strings={corporationStrings} />
             </div>
 
-            <StyledLineBreak />
-
             <div className='side-section'>
                 <div className='side-overview'>
                     <h2> {payload.experience_personal_header} </h2>
