@@ -12,7 +12,8 @@ export default {
     defaultTransition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
     defaultAppWidth: '980px',
     defaultHoverTransparency: '0.6',
-    defaultBackgroundColor: '#D5F7E6',
+    defaultBackgroundColor: 'rgba(213, 247, 230, 1)',
+    defaultSectionColor: 'rgba(255, 255, 255, 1)',
     fontStyleLarge: 'normal 30px sans-serif',
     fontStyleMedium: 'normal 24px sans-serif',
     fontStyleSemi: 'normal 20px sans-serif',
@@ -29,4 +30,5 @@ export default {
     priorStackOrder: '100',
     containerHeightMedium: '1200px',
     extendedAppWidth: '1500px',
+    sectionColor: 'rgba(236, 237, 241, 1)',
 };

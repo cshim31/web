@@ -34,8 +34,6 @@ import expImg from '../../img/experience.png';
 
 const IntroductionMain = styled.main`
     min-height: ${constants.containerHeightMedium};
-    margin: 50px auto 0px auto;
-    padding: 20px;
 `;
 
 const ImageWrapper = styled.img`
@@ -129,24 +127,43 @@ const SkillStack = () => {
     );
 };
 
+const BackgroundColor = styled.div`
+    background-color: ${props => props.color} !important;
+    overflow: hidden;
+`
+
 const Introduction = ({ payload }) => {
 
     return (
         <IntroductionMain>
-            <StyledArticle>
-                <StyledHeader> {payload.intro_developer_header} </StyledHeader>
-                <StyledDescription> {payload.intro_developer_description1} </StyledDescription>
-                <StyledDescription> {payload.intro_developer_description2} </StyledDescription>
-                <StyledDescription> {payload.intro_developer_description3} </StyledDescription>
-                <StyledDescription> {payload.intro_developer_description4} </StyledDescription>
-            </StyledArticle>
-            <Skill/>
-            <StyledArticle>
-                <StyledHeader> {payload.intro_skill_header} </StyledHeader>
-                <StyledDescription> {payload.intro_skill_description1} </StyledDescription>
-                <StyledDescription> {payload.intro_skill_description2} </StyledDescription>
-                <SkillStack />
-            </StyledArticle>
+            <BackgroundColor color={constants.defaultSectionColor}>
+                <StyledArticle>
+                    <StyledHeader> {payload.intro_developer_header} </StyledHeader>
+                    <StyledDescription> {payload.intro_developer_description1} </StyledDescription>
+                    <StyledDescription> {payload.intro_developer_description2} </StyledDescription>
+                    <StyledDescription> {payload.intro_developer_description3} </StyledDescription>
+                    <StyledDescription> {payload.intro_developer_description4} </StyledDescription>
+                </StyledArticle>
+            </BackgroundColor>
+            <BackgroundColor color={constants.sectionColor}>
+                <StyledArticle>
+                    <StyledHeader> {payload.intro_skill_header} </StyledHeader>
+                    <StyledDescription> {payload.intro_skill_description1} </StyledDescription>
+                    <StyledDescription> {payload.intro_skill_description2} </StyledDescription>
+                    <SkillStack />
+                </StyledArticle>
+            </BackgroundColor>
+            <BackgroundColor color={constants.defaultSectionColor}>
+                <StyledArticle>
+                    <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
+                    <StyledDescription> {payload.intro_work_experience_description1} </StyledDescription>
+                    <StyledDescription> {payload.intro_work_experience_description2} </StyledDescription>
+                    <StyledDescription>
+                        <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
+                        <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
+                    </StyledDescription>
+                </StyledArticle>
+            </BackgroundColor>
             
             {
                 // change it to different icons in row
@@ -155,10 +172,9 @@ const Introduction = ({ payload }) => {
                 <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
                 <StyledDescription> {payload.intro_work_experience_description1} </StyledDescription>
                 <StyledDescription> {payload.intro_work_experience_description2} </StyledDescription>
+                <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
+                <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
             </StyledArticle>
-            
-            <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
-            <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
             */
             }
         </IntroductionMain>
