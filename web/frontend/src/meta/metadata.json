@@ -51,7 +51,7 @@
     "exp_side_gttime_type": "Android Application",
     "exp_side_gttime_header": "GT Time",
     "exp_side_gttime_time_1": "01.2021 ~ 05.2021",
-    "exp_side_gttime_description_1": "Developed mobile application to assist Georgia Tech student managing course schedules and looking up available courses in real time",
+    "exp_side_gttime_description_1": "Mobile application to help managing course schedules targeting Georgia Tech students",
     "exp_side_gttime_time_2": "08.2021 ~ 12.2021",
     "exp_side_gttime_description_2": "Learned data crawling and built own course crawling application",
     "exp_side_gttime_tools": "Tools: Java, Python, SQL, AWS, Github Actions",

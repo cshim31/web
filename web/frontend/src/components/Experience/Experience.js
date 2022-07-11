@@ -11,38 +11,82 @@ const ExperienceMain = styled.main`
 `;
 
 const SectionBox = styled.div`
-    position: relative;
-    margin: 0 auto;
+    margin: 0px auto;
+    width: 1200px;
 `;
 
 const App = ({ items }) => {
     const AppExpansion = styled.div`
-        padding: 20px 0px 125px;
+        padding-top: 150px;
     `;
+
+    const AppHeader = () => {
+
+        const AppBar = styled.div`
+            border-bottom: 1px solid ${constants.defaultSecondaryColor};
+        `
+
+        return (
+            <AppBar>
+                <h1>Project</h1>
+            </AppBar>
+            
+        )
+    }
 
     const AppBox = styled.ul`
         list-style: none;
     `;
     
     const AppList = styled.li`
+        border: 1px solid ${constants.defaultSecondaryColor};
+        margin: 50px 25px 50px 25px;
+        width: 200px;
+        height: 225px;
+        text-align: center;
+        float: left;
+        overflow: hidden;
 
+        & a {
+            display: block;
+            padding: 0px 25px 0px 25px;
+            text-decoration: none;
+            color: ${constants.defaultPrimaryTextColor};
+            &:hover {
+              transition: ${constants.defaultTransition};
+            }
+        }
+    `;
+
+    
+    const AppInfo = styled.div`
+    
     `;
     
+    const AppName = styled.strong`
+    
+    `;
+
+    const AppContent = styled.p`
+    `;
 
     return (
         <AppExpansion>
+            <AppHeader />
             <AppBox>
                 {
                     items.map((item) => (
                         <AppList>
                             <a href={item.to}>
-                                <div>
-                                    {item.img}
-                                </div>
-                                <div>
-                                    {item.name}
-                                    {item.content}
-                                </div>
+                                {item.img}
+                                <AppInfo>
+                                    <AppName>
+                                        {item.name}
+                                    </AppName>
+                                    <AppContent>
+                                        {item.content}
+                                    </AppContent>
+                                </AppInfo>
                             </a>
                         </AppList>
                     ))
@@ -67,24 +111,30 @@ const Experience = ({ payload }) => {
     const appInfos = [
         createData (
             <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
-            <strong>
-                {payload.exp_corporation_gtri_header}
-            </strong>,
-            <p>
-                {payload.exp_corporation_gtri_description_1}
-            </p>,
-            <a href='https://gtri.gatech.edu/'/>
+            payload.exp_corporation_gtri_header,
+            payload.exp_corporation_gtri_description_1,
+            'https://gtri.gatech.edu/'
+        ),
+
+        createData (
+            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            payload.exp_corporation_gtri_header,
+            payload.exp_corporation_gtri_description_1,
+            'https://gtri.gatech.edu/'
+        ),
+
+        createData (
+            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            payload.exp_corporation_gtri_header,
+            payload.exp_corporation_gtri_description_1,
+            'https://gtri.gatech.edu/'
         ),
 
         createData (
             <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />,
-            <strong>
-                {payload.exp_side_gttime_header}
-            </strong>,
-            <p>
-                {payload.exp_side_gttime_description_1}
-            </p>,
-            <a href='https://play.google.com/store/apps/details?id=com.gttime.android'/>
+            payload.exp_side_gttime_header,
+            payload.exp_side_gttime_description_1,
+            'https://play.google.com/store/apps/details?id=com.gttime.android'
         ),
     ];
 
