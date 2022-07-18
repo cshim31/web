@@ -24,6 +24,8 @@ import {
     TbBrandHtml5,
 
  } from 'react-icons/tb';
+ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 import constants from '../constants';
 import { StyledArticle } from '../Article';
@@ -46,36 +48,6 @@ const ImageWrapper = styled.img`
     width: 70%;
     height: 100%;
 `;
-
-const HyperLink = (props) => {
-    return (
-        <StyledLink {...props}>
-            {props.children}
-        </StyledLink>
-    );
-};
-
-const StyledLink = styled(Link)`
-    font-weight: ${constants.fontWeightMedium};
-    font-size: ${constants.fontSizeSmall};
-    color: ${constants.defaultPrimaryRefColor};
-    text-transform: uppercase;
-    text-decoration: none;
-    &:hover {
-        color: ${constants.defaultPrimaryRefColor};
-        opacity: 0.8;
-    }
-`;
-
-const DetailedLink = (props) => {
-    return (
-        <CenterDiv>
-            <HyperLink {...props}>
-                {'Detail'}
-            </HyperLink>
-        </CenterDiv>
-    )
-};
 
 const CenterDiv = styled.div`
     padding: 70px 0 0 0;
@@ -136,6 +108,31 @@ const BackgroundColor = styled.div`
     overflow: hidden;
 `
 
+const StyledLink = styled(Link)`
+    display: block;
+
+    color: ${constants.defaultPrimaryRefColor};
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+        color: ${constants.defaultPrimaryRefColor};
+        opacity: 0.8;
+    }
+`;
+
+const InlineHeader = styled.h3`
+    display: inline-block;
+    position: relative;
+    top: -5px;
+`;
+
+const ArrowIcon = styled.div`
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+`;
+
+
 const Introduction = ({ payload }) => {
 
     return (
@@ -162,9 +159,18 @@ const Introduction = ({ payload }) => {
                     <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
                     <StyledDescription> {payload.intro_work_experience_description1} </StyledDescription>
                     <StyledDescription> {payload.intro_work_experience_description2} </StyledDescription>
+                    <StyledDescription> {payload.intro_work_experience_description3} </StyledDescription>
                     <StyledImage>
                         <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
                     </StyledImage>
+                    <StyledLink aria-label='go to experience tab' to={payload.experience_personal_link}> 
+                        <ArrowIcon>
+                            <ArrowForwardIcon/>
+                        </ArrowIcon>
+                        <InlineHeader>
+                            {'What experiences do I have?'} 
+                        </InlineHeader>
+                    </StyledLink>
                 </StyledArticle>
             </BackgroundColor>
             

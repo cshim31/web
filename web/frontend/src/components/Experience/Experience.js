@@ -44,7 +44,7 @@ const App = ({ items }) => {
         border: 1px solid ${constants.defaultSecondaryColor};
         margin: 50px 25px 50px 25px;
         width: 200px;
-        height: 225px;
+        height: 250px;
         text-align: center;
         float: left;
         position: relative;
@@ -86,7 +86,7 @@ const App = ({ items }) => {
             <AppBox>
                 {
                     items.map((item) => (
-                        <AppList>
+                        <AppList key={item.key}>
                             <a href={item.to}>
                                 <AppIcon>
                                     {item.img}
@@ -113,8 +113,8 @@ const StyledIcon = styled.img`
     height: 70px;
 `;
 
-const createData = (img, name, content, to) => {
-    return { img, name, content, to };
+const createData = (key, img, name, content, to) => {
+    return { key, img, name, content, to };
 };
 
 
@@ -122,6 +122,7 @@ const Experience = ({ payload }) => {
 
     const appInfos = [
         createData (
+            'gtri_1',
             <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
             payload.exp_corporation_gtri_header,
             payload.exp_corporation_gtri_description_1,
@@ -129,20 +130,23 @@ const Experience = ({ payload }) => {
         ),
 
         createData (
+            'gtri_2',
             <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
             payload.exp_corporation_gtri_header,
-            payload.exp_corporation_gtri_description_1,
+            payload.exp_corporation_gtri_description_2,
             'https://gtri.gatech.edu/'
         ),
 
         createData (
+            'gtri_3',
             <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
             payload.exp_corporation_gtri_header,
-            payload.exp_corporation_gtri_description_1,
+            payload.exp_corporation_gtri_description_3,
             'https://gtri.gatech.edu/'
         ),
 
         createData (
+            'gttime_1',
             <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />,
             payload.exp_side_gttime_header,
             payload.exp_side_gttime_description_1,
