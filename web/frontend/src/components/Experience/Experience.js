@@ -7,222 +7,158 @@ import gtriImg from '../../img/gtri.png';
 import gtTimeImg from '../../img/gtTime.png';
 
 const ExperienceMain = styled.main`
-    margin: auto;
-    padding: 150px 25px 25px 25px;
     min-height: ${constants.containerHeightMedium};
-
-    .corporation-section {
-    }
-
-    .corporation-overview {
-        text-transform: uppercase;
-    }
-
-    .side-section {
-        margin-top: 50px;
-    }
-
-    .side-overview {
-        text-transform: uppercase;
-    }
 `;
 
-const StyledArticle = styled.article`
+const SectionBox = styled.div`
+    margin: 0px auto;
+    width: 1200px;
+`;
 
-`
+const App = ({ items }) => {
+    const AppExpansion = styled.div`
+        padding-top: 150px;
+    `;
+
+    const AppHeader = () => {
+
+        const AppBar = styled.div`
+            border-bottom: 1px solid ${constants.defaultSecondaryColor};
+            font-family: ${constants.fontTopicStyle};
+        `
+
+        return (
+            <AppBar>
+                <h1>Project</h1>
+            </AppBar>
+            
+        )
+    }
+
+    const AppBox = styled.ul`
+        list-style: none;
+        font-family: ${constants.fontContentStyle};
+    `;
+    
+    const AppList = styled.li`
+        border: 1px solid ${constants.defaultSecondaryColor};
+        margin: 50px 25px 50px 25px;
+        width: 200px;
+        height: 250px;
+        text-align: center;
+        float: left;
+        position: relative;
+
+        & a {
+            display: block;
+            padding: 0px 25px 0px 25px;
+            text-decoration: none;
+            color: ${constants.defaultPrimaryTextColor};
+            &:hover {
+              transition: ${constants.defaultTransition};
+            }
+        }
+    `;
+
+    
+    const AppInfo = styled.div`
+    
+    `;
+
+    const AppIcon = styled.div`
+        padding-top: 20px;
+    `
+    
+    const AppName = styled.strong`
+    
+    `;
+
+    const AppContent = styled.p`
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    `;
+
+    return (
+        <AppExpansion>
+            <AppHeader />
+            <AppBox>
+                {
+                    items.map((item) => (
+                        <AppList key={item.key}>
+                            <a href={item.to}>
+                                <AppIcon>
+                                    {item.img}
+                                </AppIcon>
+                                <AppInfo>
+                                    <AppName>
+                                        {item.name}
+                                    </AppName>
+                                    <AppContent>
+                                        {item.content}
+                                    </AppContent>
+                                </AppInfo>
+                            </a>
+                        </AppList>
+                    ))
+                }
+            </AppBox>
+        </AppExpansion>
+    )
+}
 
 const StyledIcon = styled.img`
-    width: 100px
-`;
-  
-const StyledDiv = styled.div`
-    display: block;
-    max-height: 250px;
-`;  
-
-const StyledLineBreak = styled.hr`
-    opacity: 0.6;
-    margin-top: 50px;
+    width: 70px;
+    height: 70px;
 `;
 
-const HeaderDiv = styled.div`
-    width: 200px;
-`
-
-const HeaderTextBox = ({ strings }) => {
-    return (
-        <StyledDiv>
-            {
-                strings.map((string) => (
-                    <HeaderDiv key={string}>
-                        {string}
-                    </HeaderDiv>
-                ))
-            }
-        </StyledDiv>
-    );
-};
-
-
-const SummaryDiv = styled.div`
-    width: 1000px;
-`
-
-const SummaryTextBox = ({ strings }) => {
-    return (
-        <StyledDiv>
-            {
-                strings.map((string) => (
-                    <SummaryDiv key={string}>
-                        {string}
-                    </SummaryDiv>
-                ))
-            }
-        </StyledDiv>
-    );
-};
-
-const InnerTableContainer = styled.div`
-    overflow-x: hidden !important;
-    text-overflow: ellipsis !important;
-    width: 100%;
-`;
-
-const StyledTable = styled.table`
-    table-layout: auto;
-
-    & th,
-    & tr,
-    & td {
-        border-style:hidden;
-    }
-`;
-
-const StyledTableBody = styled.tbody`
-
-`;
-
-const StyledTableRow = styled.tr`
-
-`;
-
-const ImageTableCell = styled.td`
-    width: 100px;
-`;
-
-const ScaledTableCell = styled.td`
-    padding-right: 20px !important;
-`;
-
-const ListTable = ({ strings }) => {
-    return (
-        <InnerTableContainer>
-            <StyledArticle>
-                <StyledTable aria-label="list table">
-                    <StyledTableBody>
-                        {
-                            strings.map((row) => (
-                                <StyledTableRow
-                                key={row.img}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
-                                >
-                                <ImageTableCell>
-                                    {row.img}
-                                </ImageTableCell>
-                                <ScaledTableCell>
-                                    {row.desc}
-                                </ScaledTableCell>
-                                <ScaledTableCell>
-                                    {row.role}
-                                </ScaledTableCell>
-                                </StyledTableRow>
-                            ))
-                        }
-                    </StyledTableBody>
-                </StyledTable>
-            </StyledArticle>
-        </InnerTableContainer>
-    );
-};
-
-ListTable.propTypes = {
-    strings: PropTypes.arrayOf(PropTypes.shape({
-        img: PropTypes.node,
-        desc: PropTypes.node,
-        role: PropTypes.node,
-    }))
-};
-
-
-const createData = (img, desc, role ) => {
-    return { img, desc, role };
+const createData = (key, img, name, content, to) => {
+    return { key, img, name, content, to };
 };
 
 
 const Experience = ({ payload }) => {
 
-    const corporationStrings = [
+    const appInfos = [
         createData (
-            <a href='https://gtri.gatech.edu/'>
-                <StyledIcon src={gtriImg} alt={'GTRI logo'} />
-            </a>,
-            <HeaderTextBox strings={[
-                payload.exp_corporation_gtri_header,
-                payload.exp_corporation_gtri_time_1,
-                payload.exp_corporation_gtri_time_2,
-            ]} />,
-            <SummaryTextBox strings={[
-                payload.exp_corporation_gtri_type,
-                payload.exp_corporation_gtri_description_1,
-                payload.exp_corporation_gtri_description_2,
-                payload.exp_corporation_gtri_tools,
-            ]} />,
+            'gtri_1',
+            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            payload.exp_corporation_gtri_header,
+            payload.exp_corporation_gtri_description_1,
+            'https://gtri.gatech.edu/'
+        ),
+
+        createData (
+            'gtri_2',
+            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            payload.exp_corporation_gtri_header,
+            payload.exp_corporation_gtri_description_2,
+            'https://gtri.gatech.edu/'
+        ),
+
+        createData (
+            'gtri_3',
+            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            payload.exp_corporation_gtri_header,
+            payload.exp_corporation_gtri_description_3,
+            'https://gtri.gatech.edu/'
+        ),
+
+        createData (
+            'gttime_1',
+            <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />,
+            payload.exp_side_gttime_header,
+            payload.exp_side_gttime_description_1,
+            'https://play.google.com/store/apps/details?id=com.gttime.android'
         ),
     ];
 
-    const sideStrings = [
-        createData (
-            <a href='https://play.google.com/store/apps/details?id=com.gttime.android'>
-                <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />
-            </a>,
-            <HeaderTextBox strings={[
-                payload.exp_side_gttime_header,
-                payload.exp_side_gttime_time_1,
-                payload.exp_side_gttime_time_2,
-            ]} />,
-            <SummaryTextBox strings={[
-                payload.exp_side_gttime_type,
-                payload.exp_side_gttime_description_1,
-                payload.exp_side_gttime_description_2,
-                payload.exp_side_gttime_tools,
-            ]} />,
-        ),
-    ]
-
-
     return (
         <ExperienceMain>
-            <div className='corporation-section'>
-                <div className='corporation-overview'>
-                    <h2> {payload.experience_corporation_header} </h2>
-                </div>
-                <div className='corporation-description'>
-                    <p> {payload.exp_description} </p>
-                </div>
-                <ListTable strings={corporationStrings} />
-            </div>
-
-            <StyledLineBreak />
-
-            <div className='side-section'>
-                <div className='side-overview'>
-                    <h2> {payload.experience_personal_header} </h2>
-                </div>
-                <div className='side-description'>
-                    <p> {payload.exp_description} </p>
-                </div>
-                <ListTable strings={sideStrings} />
-            </div>
+            <SectionBox>
+                <App items={appInfos} />
+            </SectionBox>
         </ExperienceMain>
     );
 };

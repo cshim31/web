@@ -22,7 +22,8 @@ const Home = ({ payload }) => {
     const content = [
         <TextWrapper key="desc">
                 <StyledHeader> {payload.app_owner_header} </StyledHeader>
-                <StyledDescription> {payload.app_owner_description} </StyledDescription>
+                <StyledDescription> {payload.app_owner_description1} </StyledDescription>
+                <StyledDescription> {payload.app_owner_description2} </StyledDescription>
         </TextWrapper>,
         <ImageWrapper
             key="logo"

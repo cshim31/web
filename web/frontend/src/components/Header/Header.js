@@ -211,7 +211,7 @@ const Header = ({ payload }) => {
             to:{
                 pathname:'/intro'
             },
-            label: 'Introduction',
+            label: 'ABOUT',
         },
     
         {
@@ -219,7 +219,7 @@ const Header = ({ payload }) => {
             to:{
                 pathname:'/exp'
             },
-            label: 'Experience',
+            label: 'EXPERIENCE',
         },
     
     ];
