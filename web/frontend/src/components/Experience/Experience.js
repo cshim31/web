@@ -24,6 +24,7 @@ const App = ({ items }) => {
 
         const AppBar = styled.div`
             border-bottom: 1px solid ${constants.defaultSecondaryColor};
+            font-family: ${constants.fontTopicStyle};
         `
 
         return (
@@ -36,6 +37,7 @@ const App = ({ items }) => {
 
     const AppBox = styled.ul`
         list-style: none;
+        font-family: ${constants.fontContentStyle};
     `;
     
     const AppList = styled.li`
@@ -45,7 +47,7 @@ const App = ({ items }) => {
         height: 225px;
         text-align: center;
         float: left;
-        overflow: hidden;
+        position: relative;
 
         & a {
             display: block;
@@ -62,12 +64,20 @@ const App = ({ items }) => {
     const AppInfo = styled.div`
     
     `;
+
+    const AppIcon = styled.div`
+        padding-top: 20px;
+    `
     
     const AppName = styled.strong`
     
     `;
 
     const AppContent = styled.p`
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     `;
 
     return (
@@ -78,7 +88,9 @@ const App = ({ items }) => {
                     items.map((item) => (
                         <AppList>
                             <a href={item.to}>
-                                {item.img}
+                                <AppIcon>
+                                    {item.img}
+                                </AppIcon>
                                 <AppInfo>
                                     <AppName>
                                         {item.name}

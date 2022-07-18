@@ -59,20 +59,12 @@ const IconWrapper = styled.div`
     align-items: center;
 `;
 
-const StyledHeader = styled.div`
-    font: ${constants.fontStyleMedium};
-
-    @media only screen and (max-width: ${constants.defaultAppWidth}) {
-        font-size: ${constants.fontSizeSemi};
-    }
+const StyledHeader = styled.h1`
+    font-family: ${constants.fontTopicStyle};
 `;
 
 const StyledDescription = styled.p`
-    font: ${constants.fontStyleSmall};
-
-    @media only screen and (max-width: ${constants.defaultAppWidth}) {
-        font-size: ${constants.fontSizeSmall};
-    }
+    font-family: ${constants.fontContentStyle}; 
 `;
 
 const SkillGroup = ({ payload }) => {

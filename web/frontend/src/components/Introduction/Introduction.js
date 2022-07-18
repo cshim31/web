@@ -36,11 +36,15 @@ const IntroductionMain = styled.main`
     min-height: ${constants.containerHeightMedium};
 `;
 
+const StyledImage = styled.div`
+    padding: 75px 0 0 50px;
+    width: 550px;
+    height: 250px;
+`;
+
 const ImageWrapper = styled.img`
-    margin: 0 0 0 50px;
-    max-width: 450px;
-    height: auto;
-    width: auto;
+    width: 70%;
+    height: 100%;
 `;
 
 const HyperLink = (props) => {
@@ -158,10 +162,9 @@ const Introduction = ({ payload }) => {
                     <StyledHeader> {payload.intro_work_experience_header} </StyledHeader>
                     <StyledDescription> {payload.intro_work_experience_description1} </StyledDescription>
                     <StyledDescription> {payload.intro_work_experience_description2} </StyledDescription>
-                    <StyledDescription>
-                        <DetailedLink aria-label='go to experience tab' to={payload.experience_personal_link} />
+                    <StyledImage>
                         <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
-                    </StyledDescription>
+                    </StyledImage>
                 </StyledArticle>
             </BackgroundColor>
             

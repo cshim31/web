@@ -7,7 +7,7 @@ const StyledArticle = styled.article`
     padding: 40px;
     width: ${constants.extendedAppWidth};
 
-    font-family: 'Roboto', sans-serif;
+    font-family: ${constants.fontTopicStyle};
 
     @media only screen and (max-width: ${constants.extendedAppWidth}) {
         width: 100%;

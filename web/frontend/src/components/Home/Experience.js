@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { 
-    Card,
-} from '@mui/material';
-import { Link } from "react-router-dom";
+import StyledLink from '../Link';
 
 import constants from '../constants';
 import corporationImg from '../../img/corporation.png';
@@ -43,12 +40,12 @@ const ExperienceContainer = styled.div`
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
         flex-direction: column;
+        align-items: center;
     }
 `;
 
 const StyledCard = styled.div`
-    max-width: 35%;
-    margin: 40px 30px 30px 0;
+    margin: 40px 50px;
     background-color: transparent !important;
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
@@ -58,57 +55,36 @@ const StyledCard = styled.div`
 `;
 
 const StyledContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px;
+    width: 450px;
+    height: 400px;
+    text-align: center;
+    position: relative;
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
         margin: 0px;
     }
 `;
 
-const Image = (props) => {
-    return (
-        <StyledImage {...props} />
-    );
-}
 
 const StyledImage = styled.img`
-    max-height: 300px;
-    height: auto;
-    width: auto;
+    width: 70%;
+    height: 70%;
 `;
 
-const StyledHeader = styled.div`
-    font: ${constants.fontStyleMedium};
+const StyledInfo = styled.div`
+`;
+
+const StyledIcon = styled.div`
+    
+`
+
+const StyledHeader = styled.h1`
+    font-family: ${constants.fontTopicStyle};
 `;
 
 const StyledDescription = styled.p`
-    font: ${constants.fontStyleSmall};
+    font-family: ${constants.fontContentStyle}; 
 `;
-
-const StyledLink = styled(Link)`
-    font-weight: ${constants.fontWeightMedium};
-    font-size: ${constants.fontSizeSmall};
-    color: ${constants.defaultPrimaryRefColor};
-    padding: 30px 0 30px 0;
-
-    text-transform: uppercase;
-    text-decoration: none;
-    &:hover {
-        color: ${constants.defaultPrimaryRefColor};
-        opacity: 0.8;
-    }
-`;
-
-const HyperLink = (props) => {
-    return (
-        <StyledLink {...props}>
-            {props.children}
-        </StyledLink>
-    );
-};
 
 
 
@@ -117,31 +93,39 @@ const ExperienceGroup = ({ payload }) => {
         <ExperienceContainer>
             <StyledCard>
                 <StyledContent>
-                    <Image
-                        src= {corporationImg}
-                        alt='Communication flat image'/>
-                    <StyledHeader>
-                        {payload.experience_corporation_header}
-                    </StyledHeader>
-                    <StyledDescription>
-                        {payload.experience_corporation_description}
-                    </StyledDescription>
-                    <HyperLink aria-label='go to experience tab' to={payload.experience_corporation_link}> {'Detail'} </HyperLink>
+                    <StyledIcon>
+                        <StyledImage
+                            src= {corporationImg}
+                            alt='Communication flat image'/>
+                    </StyledIcon>
+                    <StyledInfo>
+                        <StyledHeader>
+                            {payload.experience_corporation_header}
+                        </StyledHeader>
+                        <StyledDescription>
+                            {payload.experience_corporation_description}
+                        </StyledDescription>
+                    </StyledInfo>
                 </StyledContent>
+                <StyledLink aria-label='go to experience tab' to={payload.experience_corporation_link}> {'Detail'} </StyledLink>
             </StyledCard>
             <StyledCard>
                 <StyledContent>
-                    <Image
-                        src= {individualImg}
-                        alt='Colourful programmer working illustration'/>
-                    <StyledHeader>
-                        {payload.experience_personal_header}
-                    </StyledHeader>
-                    <StyledDescription>
-                        {payload.experience_personal_description}
-                    </StyledDescription>
-                    <HyperLink aria-label='go to experience tab' to={payload.experience_personal_link}> {'Detail'} </HyperLink>
+                    <StyledIcon>
+                        <StyledImage
+                            src= {individualImg}
+                            alt='Colourful programmer working illustration'/>
+                    </StyledIcon>
+                        <StyledInfo>
+                            <StyledHeader>
+                                {payload.experience_personal_header}
+                            </StyledHeader>
+                            <StyledDescription>
+                                {payload.experience_personal_description}
+                            </StyledDescription>
+                        </StyledInfo>
                 </StyledContent>
+                <StyledLink aria-label='go to experience tab' to={payload.experience_personal_link}> {'Detail'} </StyledLink>
             </StyledCard>
         </ExperienceContainer>
     );

@@ -20,6 +20,7 @@
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
     "styled-components": "^5.3.3",
+    "vanilla-framework": "^3.6.1",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
