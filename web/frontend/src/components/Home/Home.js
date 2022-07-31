@@ -12,7 +12,6 @@ import {
     StyledHeader,
     StyledDescription
 } from "../Text";
-import bannerImg from '../../img/developer_wide.png';
 
 const HomeMain = styled.main`
     min-height: ${constants.containerHeightMedium};
@@ -27,7 +26,7 @@ const Home = ({ payload }) => {
         </TextWrapper>,
         <ImageWrapper
             key="logo"
-            src= {bannerImg}
+            src= {'/img/developer_wide.png'}
             alt='Website creator concept illustration'
         />
     ];

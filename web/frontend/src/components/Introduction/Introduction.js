@@ -30,8 +30,6 @@ import {
 import constants from '../constants';
 import { StyledArticle } from '../Article';
 import { StyledHeader, StyledDescription } from '../Text';
-import Skill from './Skill';
-import expImg from '../../img/experience.png';
 
 
 const IntroductionMain = styled.main`
@@ -161,7 +159,7 @@ const Introduction = ({ payload }) => {
                     <StyledDescription> {payload.intro_work_experience_description2} </StyledDescription>
                     <StyledDescription> {payload.intro_work_experience_description3} </StyledDescription>
                     <StyledImage>
-                        <ImageWrapper src={expImg} alt={'Tiny student sitting book pile reading flat illustration'}/>
+                        <ImageWrapper src={'/images/experience.png'} alt={'Tiny student sitting book pile reading flat illustration'}/>
                     </StyledImage>
                     <StyledLink aria-label='go to experience tab' to={payload.experience_personal_link}> 
                         <ArrowIcon>
