@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import StyledLink from '../Link';
 
 import constants from '../constants';
-import corporationImg from '../../img/corporation.png';
-import individualImg from '../../img/developer.png';
 
 const StyledDiv = styled.div`
     background-color: transparent;
@@ -95,7 +93,7 @@ const ExperienceGroup = ({ payload }) => {
                 <StyledContent>
                     <StyledIcon>
                         <StyledImage
-                            src= {corporationImg}
+                            src= {'/images/corporation.png'}
                             alt='Communication flat image'/>
                     </StyledIcon>
                     <StyledInfo>
@@ -113,7 +111,7 @@ const ExperienceGroup = ({ payload }) => {
                 <StyledContent>
                     <StyledIcon>
                         <StyledImage
-                            src= {individualImg}
+                            src= {'/images/developer.png'}
                             alt='Colourful programmer working illustration'/>
                     </StyledIcon>
                         <StyledInfo>

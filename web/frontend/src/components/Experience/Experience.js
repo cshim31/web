@@ -3,8 +3,6 @@ import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 
 import constants from '../constants';
-import gtriImg from '../../img/gtri.png';
-import gtTimeImg from '../../img/gtTime.png';
 
 const ExperienceMain = styled.main`
     min-height: ${constants.containerHeightMedium};
@@ -123,7 +121,7 @@ const Experience = ({ payload }) => {
     const appInfos = [
         createData (
             'gtri_1',
-            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            <StyledIcon src='/images/gtri.png' alt={'GTRI logo'} />,
             payload.exp_corporation_gtri_header,
             payload.exp_corporation_gtri_description_1,
             'https://gtri.gatech.edu/'
@@ -131,7 +129,7 @@ const Experience = ({ payload }) => {
 
         createData (
             'gtri_2',
-            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            <StyledIcon src='/images/gtri.png' alt={'GTRI logo'} />,
             payload.exp_corporation_gtri_header,
             payload.exp_corporation_gtri_description_2,
             'https://gtri.gatech.edu/'
@@ -139,7 +137,7 @@ const Experience = ({ payload }) => {
 
         createData (
             'gtri_3',
-            <StyledIcon src={gtriImg} alt={'GTRI logo'} />,
+            <StyledIcon src='/images/gtri.png'  alt={'GTRI logo'} />,
             payload.exp_corporation_gtri_header,
             payload.exp_corporation_gtri_description_3,
             'https://gtri.gatech.edu/'
@@ -147,7 +145,7 @@ const Experience = ({ payload }) => {
 
         createData (
             'gttime_1',
-            <StyledIcon src={gtTimeImg} alt={'GT Time logo'} />,
+            <StyledIcon src={'/images/gtTime.png'} alt={'GT Time logo'} />,
             payload.exp_side_gttime_header,
             payload.exp_side_gttime_description_1,
             'https://play.google.com/store/apps/details?id=com.gttime.android'
