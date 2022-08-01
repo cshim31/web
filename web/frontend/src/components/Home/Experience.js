@@ -8,8 +8,13 @@ import constants from '../constants';
 const StyledDiv = styled.div`
     background-color: transparent;
     text-align: center;
-    width: 70%;
-    margin: 0 auto 100px auto;
+    width: ${constants.defaultAppWidth};
+    margin: 0px auto 100px auto;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        width: 100%;
+        margin: 0px auto;
+    }
 `;
 
 
@@ -18,6 +23,10 @@ const StyledTopic = styled.div`
     font-style: normal;
     font-weight: ${constants.fontWeightMedium};
     padding: 60px 0 0 0;
+
+    @media only screen and (max-width: ${constants.defaultAppWidth}) {
+        padding: 0px;
+    }
 `;
 
 const Topic = ({ string }) => {

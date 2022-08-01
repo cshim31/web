@@ -45,22 +45,28 @@ const SkillContainer = styled.div`
 
     @media only screen and (max-width: ${constants.defaultAppWidth}) {
         flex-direction: column;
-        max-width: 100%;
     }
 `;
 
 const StyledContainer = styled.div`
     padding: 30px 0 0 0;
-    max-width: 28%;
+    height: 250px;
+    width: 220px;
 `;
 
 const IconWrapper = styled.div`
-    padding: 0 0 50px 0;
     align-items: center;
+    height: 40px;
 `;
 
-const StyledHeader = styled.h1`
+const StyledInfo = styled.div`
+    margin: 30px 0px;
+`;
+
+const StyledHeader = styled.strong`
     font-family: ${constants.fontTopicStyle};
+    display: block;
+    font-size: ${constants.fontSizeSemi};
 `;
 
 const StyledDescription = styled.p`
@@ -74,34 +80,40 @@ const SkillGroup = ({ payload }) => {
                 <IconWrapper>
                     <CodeOutlinedIcon fontSize='large'/>
                 </IconWrapper>
-                <StyledHeader> 
-                    {payload.skill_language_header} 
-                </StyledHeader>
-                <StyledDescription> 
-                    {payload.skill_language_description} 
-                </StyledDescription>
+                <StyledInfo>
+                    <StyledHeader> 
+                        {payload.skill_language_header} 
+                    </StyledHeader>
+                    <StyledDescription> 
+                        {payload.skill_language_description} 
+                    </StyledDescription>
+                </StyledInfo>
             </StyledContainer>
             <StyledContainer>
                 <IconWrapper>
                     <EngineeringOutlinedIcon fontSize='large'/>
                 </IconWrapper>
-                <StyledHeader> 
+                <StyledInfo>
+                    <StyledHeader> 
                     {payload.skill_principle_header} 
-                </StyledHeader>
-                <StyledDescription>
-                    {payload.skill_principle_description} 
-                </StyledDescription>
+                    </StyledHeader>
+                    <StyledDescription>
+                        {payload.skill_principle_description} 
+                    </StyledDescription>
+                </StyledInfo>
             </StyledContainer>
             <StyledContainer>
                 <IconWrapper>
                     <SchoolOutlinedIcon fontSize='large'/>
                 </IconWrapper>
-                <StyledHeader> 
-                    {payload.skill_personality_header} 
-                </StyledHeader>
-                <StyledDescription> 
-                    {payload.skill_personality_description} 
-                </StyledDescription>
+                <StyledInfo>
+                    <StyledHeader> 
+                        {payload.skill_personality_header} 
+                    </StyledHeader>
+                    <StyledDescription> 
+                        {payload.skill_personality_description} 
+                    </StyledDescription>
+                </StyledInfo>
             </StyledContainer>
         </SkillContainer>
     );
