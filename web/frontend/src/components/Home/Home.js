@@ -26,7 +26,7 @@ const Home = ({ payload }) => {
         </TextWrapper>,
         <ImageWrapper
             key="logo"
-            src= {'/img/developer_wide.png'}
+            src= {'/images/developer_wide.png'}
             alt='Website creator concept illustration'
         />
     ];
