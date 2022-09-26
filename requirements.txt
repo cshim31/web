@@ -3,5 +3,5 @@ Django==4.1.1
 nodeenv==1.7.0
 nodejs==0.1.1
 optional-django==0.3.0
-sqlparse==0.4.2
+sqlparse==0.4.3
 tzdata==2022.2
