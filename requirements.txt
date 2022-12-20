@@ -1,4 +1,4 @@
-asgiref==3.5.2
+asgiref==3.6.0
 Django==4.1.1
 nodeenv==1.7.0
 nodejs==0.1.1
